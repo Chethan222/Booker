@@ -1,0 +1,377 @@
+{% extends 'base.html' %}
+{% block title %}
+    Register
+{% endblock title %}
+{% block style %}
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+
+		html {
+			scroll-behavior: smooth;
+		}
+
+		section {
+			padding-bottom: 60px;
+		}
+
+		h1,
+		h2,
+		h3 {
+			margin: 0;
+			color: rgb(7, 7, 7);
+			text-transform: uppercase;
+			font-weight: 300;
+			letter-spacing: 1px;
+		}
+
+		h1 {
+			margin: 0;
+		}
+
+		h2 {
+			text-align: center;
+			word-spacing: 3px;
+		}
+
+		h2:after {
+			font-weight: 900;
+			color: black;
+			display: block;
+			height: 2px;
+			background-color: #e67e22;
+			content: ' ';
+			margin: 0 auto;
+			margin-top: 10px;
+			margin-bottom: 30px;
+			width: 100px;
+		}
+
+		h3 {
+			font-size: 110%;
+			margin-bottom: 15px;
+		}
+
+		html,
+		body {
+			background: #fff;
+			color: #555;
+			font-family: 'Lato', 'Arial', sans-serif;
+			font-weight: 300;
+			font-size: 20px;
+			text-rendering: optimizeLegibility;
+			overflow-x: hidden;
+		}
+
+		.register_box {
+			border-radius: 8px;
+			box-shadow: -10px 10px 10px #1f1e1e;
+			background-color: #fcfcfc;
+			border-top-right-radius: 5px;
+			border-top-left-radius: 5px;
+			padding: 2rem;
+			margin-top: 30px;
+			position: relative;
+		}
+
+		.row {
+			max-width: 1140px;
+			margin: 0 auto;
+		}
+
+		.clearfix {
+			zoom: 1;
+		}
+
+		.clearfix::after {
+			content: '';
+			clear: both;
+			display: block;
+			height: 0;
+			visibility: hidden;
+		}
+
+		.section_register {
+			width: 50%;
+			margin: 0 auto;
+			padding-bottom: 60px;
+		}
+
+		input[type='text'],
+		input[type='email'],
+		input[type='number'],
+		input[type='password'] {
+			display: block;
+			padding: 7px;
+			width: 100%;
+			border-radius: 3px;
+			border: 1px solid #ccc;
+		}
+
+		input[type='submit'] {
+			border: 1px solid #e67e22;
+			background-color: #ffffff;
+			color: #e67e22;
+			display: inline-block;
+			padding: 10px 30px;
+			font-weight: 300;
+			text-decoration: none;
+			border-radius: 200px;
+			-webkit-transition: all 0.6s;
+			-o-transition: all 0.6s;
+			transition: all 0.6s;
+		}
+
+		input:focus {
+			border: 1px solid #af5200;
+			background-color: #f3ddbf;
+
+		}
+
+		input[type='submit']:hover,
+		input[type='submit']:active {
+			border: 1px solid #e67e22;
+			background-color: #e67e22;
+			color: #ffffff;
+		}
+
+		*:focus {
+			outline: none;
+		}
+
+		section {
+			margin-top: 50px !important;
+		}
+
+
+
+		.snackbar {
+			display: none;
+			visibility: hidden;
+			text-align: center;
+			max-width: 300px;
+			padding: 10px 20px;
+			color: indianred;
+			background-color: rgb(241, 202, 202);
+			border:1px solid indianred;
+			border-radius: 10px;
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: translate(-50%,0);
+			transition: all 1s;
+			animation: moveDown 1s;
+		}
+
+		@keyframes moveDown {
+			0%{
+				transform: translate(-50%,-20px);
+			}
+			100%{
+transform: translate(-50%,0);
+			}
+		}
+
+		.snackbar.show {
+			visibility: visible;
+			display: block;
+			color: rgb(221, 92, 92);
+		}
+
+		.message {
+			color: #ff8080 !important;
+			text-align: center;
+			font-size: 20px;
+		}
+
+		body {
+			background-attachment: fixed;
+			background-image: -o-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/static/images/25.jpg);
+			background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(/static/images/25.jpg);
+			background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/static/images/25.jpg);
+			height: 100vh;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+		.login__link {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.login__link a {
+			text-decoration: none;
+			color: #e67e22;
+			padding: 5px 0;
+			border-bottom: 2px solid transparent;
+			cursor: pointer;
+		}
+
+		.login__link a:hover {
+			text-decoration: none;
+			color: #e67e22;
+			border-bottom: 2px solid #e67e22;
+
+		}
+
+		.registerbtn {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 10px;
+		}
+
+		.messages {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.messageBox {
+			display: inline-block;
+			padding: 10px 20px;
+			font-size: 20px;
+			border-radius: 5px;
+			border: 1px solid transparent;
+			margin-bottom: 10px;
+		}
+
+		.sucess {
+			color: green;
+			background-color: rgb(106, 168, 106);
+			border-color: green;
+		}
+
+		.error {
+			color: indianred;
+			background-color: rgb(240, 169, 169);
+			border-color: indianred;
+		}
+	</style>
+{% endblock style %}
+{% block content %}
+
+	<section class="section_register" id="signUp">
+		<div class="register_box">
+			<div class="messages">
+				{% with messages = get_flashed_messages(with_categories=true) %}
+				{% if messages %}
+				{% for category, message in messages %}
+				<div class="messageBox login__link {{ category }}">{{ message }}
+					{% if category== 'sucess' %}
+					<a href="/login">Click here to Login</a>.
+					{% endif %}
+				</div>
+				{% endfor %}
+				{% endif %}
+				{% endwith %}
+			</div>
+
+			<div class="row">
+				<h2>Register</h2>
+				<div class="message">{{text | safe}}</div>
+				<form method="post" action="/register" class="contact-form" id="register_form">
+					<div class="row">
+						<div class="col span-1-of-2">
+							<label for="name">Name</label>
+						</div>
+						<div class="col span-1-of-2">
+							<input type="text" id="name" name="name" placeholder="Your name" autocomplete="off"
+								required />
+						</div>
+					</div>
+					<div class="row">
+						<div class="col span-1-of-2">
+							<label for="email">Email</label>
+						</div>
+						<div class="col span-1-of-2">
+							<input type="email" name="email" id="email" autocomplete="off"
+								placeholder="Your email address" required />
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col span-1-of-2">
+							<label>Phone Number</label>
+						</div>
+						<div class="col span-1-of-2">
+							<input type="number" minlength="10" maxlength="10" name="phone" id="phone"
+								autocomplete="off" placeholder="Your phone number" required />
+						</div>
+					</div>
+					<div class="row">
+						<div class="col span-1-of-2">
+							<label>Password</label>
+						</div>
+						<div class="col span-1-of-2">
+							<input type="password" name="password" id="password" autocomplete="off"
+								placeholder="Enter password" required />
+						</div>
+					</div>
+					<div class="snackbar" id="snackbar"></div>
+					<div class="row registerbtn">
+						<input type="submit" value="Register" />
+					</div>
+				</form>
+				
+				<div class="login__link">
+					<a href="/login">Have an account?Login</a>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock content %}
+{% block script %}
+	
+<script>
+	const registerForm = document.getElementById('register_form');
+	const nameInput = document.getElementById('name');
+	const emailInput = document.getElementById('email');
+	const passInput = document.getElementById('password');
+	const phoneInput = document.getElementById('phone');
+
+	const displayError = (content) => {
+		const snackBar = document.getElementById('snackbar');
+		snackBar.classList.add('show');
+		snackBar.innerHTML = content;
+		setTimeout(function () {
+			snackBar.classList.remove('show');
+		}, 3000);
+	};
+	registerForm.addEventListener('submit', async (event) => {
+		event.preventDefault();
+		const name = nameInput.value;
+		const email = emailInput.value;
+		const password = passInput.value;
+		const phone = phoneInput.value;
+
+		console.log(name, email, password, phone);
+
+		let error = 0;
+		if (!name || !email || !password || !phone) {
+			displayError('Field/s can not be empty!');
+			error = 1;
+		}
+		if (name.length < 4) {
+			error = 1;
+			displayError('Enter a valid name!');
+		}
+		if (phone.length != 10) {
+			error = 1;
+			displayError('Enter a valid phone number!');
+		}
+
+		if (error === 0) {
+			registerForm.submit();
+		}
+	});
+</script>
+
+    
+{% endblock script %}

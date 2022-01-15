@@ -1,0 +1,349 @@
+/************ Extra Large devices: from 1024px to 1140px ****************/
+
+@media only screen and (max-width: 1140px) {
+    .hero-text-box {
+        width: 100%;
+        padding: 0 2%;
+    }
+    .row {
+        padding: 0 2%;
+    }
+    .section-items {
+        padding: 0;
+    }
+}
+
+
+/************ Large devices: from 768px to 1023px ****************/
+
+@media only screen and (max-width: 1023px) {
+    body {
+        font-size: 18px;
+    }
+    section {
+        padding: 40px 0;
+    }
+    section .aboutContent {
+        width: 80%;
+        margin-left: 10%;
+    }
+    .section-items {
+        padding: 0;
+    }
+    .stepBox {
+        margin-top: 10px;
+    }
+    .stepBox:last-child {
+        margin-bottom: 10px;
+    }
+    .worksStep {
+        margin-bottom: 30px;
+    }
+    .worksStep:last-of-type {
+        margin-bottom: 50px;
+    }
+    .section-work {
+        padding-bottom: 40px;
+    }
+    .worksStep div {
+        height: 50px;
+        width: 50px;
+        text-align: center;
+        padding: 10px;
+        font-size: 100%;
+        margin-right: 30px;
+    }
+    .appScreen {
+        width: 50%;
+    }
+    .cityInfo {
+        font-size: 90%;
+    }
+    .cityInfo ion-icon {
+        font-size: 60%;
+    }
+    .plan-box {
+        width: 100%;
+        margin: 0;
+    }
+    .plan-price {
+        font-size: 150%;
+    }
+    .plan-box li {
+        font-size: 75%;
+    }
+    .btn {
+        padding: 5px, 5px;
+    }
+    .sign-up-section {
+        padding-bottom: 50px;
+    }
+    .section-contact-form {
+        width: 80%;
+    }
+    footer {
+        padding: 30px;
+    }
+}
+
+
+/************ Medium devices: from 481px to 767px ****************/
+
+@media only screen and (max-width: 767px) {
+    body {
+        font-size: 16px;
+    }
+    section {
+        padding: 30px, 0;
+    }
+    .row,
+    .hero-text-box {
+        padding: 0 4%;
+    }
+    div .col {
+        width: 100%;
+        margin: 0 0 4% 0;
+    }
+    .navlogo {
+        height: 80px;
+        width: auto;
+    }
+    .mobileNavIcon {
+        display: inline-block;
+        margin-top: 20px;
+        margin-right: 10px;
+    }
+    .navBar li {
+        color: #fff;
+        display: inline-block;
+        margin-left: 40px;
+    }
+    .navBar {
+        display: none;
+        float: left;
+        margin-top: 35px;
+        margin-left: 25px;
+    }
+    .navBar li {
+        display: block;
+    }
+    .navBar li a:link,
+    .navBar li a:visited {
+        display: block;
+        border: 0;
+        padding: 10px 0;
+        font-size: 100%;
+    }
+    .navBar li a:hover,
+    .navBar li a:active {
+        border-bottom: 2px solid #e67e22;
+    }
+    .sticky-nav .navBar li a:link,
+    .sticky-nav .navBar li a:visited {
+        padding: 10px 0;
+    }
+    .sticky-nav .navBar {
+        margin-top: 10px;
+    }
+    .sticky-nav .mobileNavIcon {
+        margin-top: 10px;
+    }
+    .sticky-nav .mobileNavIcon i {
+        color: rgb(250, 250, 250);
+    }
+    /* .sticky-nav .mobileNavIcon i{color:rgb(0, 0, 0);} */
+    h1 {
+        font-size: 180%;
+    }
+    h2 {
+        font-size: 150%;
+    }
+    section .aboutContent {
+        width: 100%;
+        margin-left: 0%;
+    }
+    .section-items {
+        padding: 0;
+    }
+    .stepBox {
+        margin-top: 10px 0 10px 0;
+    }
+    .stepBox {
+        margin-top: 10px;
+    }
+    .stepBox:first-child {
+        text-align: center;
+    }
+    .appScreen {
+        width: 40%;
+    }
+    .worksStep:last-of-type {
+        margin-bottom: 30px;
+    }
+    .worksStep div {
+        height: 30px;
+        width: 30px;
+        padding: 5px;
+        margin-right: 10px;
+    }
+    .section-cities .row {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+    .box img {
+        margin: 0;
+    }
+    .section-cities .col:first-child,
+    .section-cities .col {
+        width: 42%;
+        /* padding: 0 15%; */
+        margin: 20px 4%;
+    }
+    .btn-app img {
+        height: 40px;
+        width: auto;
+    }
+    .sign-up-section h2 {
+        margin-bottom: 30px;
+    }
+    .plan-box div {
+        padding: 5px 10px;
+    }
+    .plan-box {
+        width: 60%;
+        margin: 20px 20%;
+        font-size: 100%;
+    }
+    footer {
+        padding: 20px;
+    }
+    .section-contact-form div .space {
+        display: none;
+    }
+    input[type="submit"] {
+        margin-top: 10px;
+    }
+    .cityInfo {
+        font-size: 100%;
+    }
+    .cityInfo ion-icon {
+        font-size: 140%;
+    }
+    .copyRight {
+        margin-top: 0;
+    }
+    footer {
+        padding: 20px;
+    }
+    .footer-icons,
+    .footer-nav {
+        padding: 0;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+
+/************ Small devices: from 0 to 480px ****************/
+
+@media only screen and (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+    section {
+        padding: 50px 0;
+    }
+    .section-items {
+        padding: 0;
+    }
+    h1 {
+        font-size: 150%;
+    }
+    h2 {
+        font-size: 120%;
+    }
+    header .navlogo {
+        height: 45px;
+        width: auto;
+    }
+    .navBar {
+        margin-left: 7px;
+    }
+    .navBar li {
+        margin-left: 6px;
+    }
+    .navBar li a:link,
+    .navBar li a:visited {
+        padding: 5px 0;
+    }
+    .hero-text-box {
+        text-align: center;
+    }
+    .hero-text-box h1 {
+        font-size: 170%;
+        margin-bottom: 0px;
+    }
+    .hero-text-box {
+        padding-top: 100px;
+    }
+    .btn-app img {
+        height: 30px;
+        width: auto;
+    }
+    .btn-hungry {
+        margin: 20px 0 20px 0;
+    }
+    section {
+        padding: 25px 0;
+    }
+    .section-contact-form {
+        width: 100%;
+    }
+    .section-cities .col:first-child,
+    .section-cities .col {
+        width: 80%;
+        /* padding: 0 15%; */
+        margin: 20px 10%;
+    }
+    .plan-box div {
+        padding: 5px 10px;
+    }
+    .plan-box {
+        width: 80%;
+        margin: 20px 10%;
+        font-size: 120%;
+    }
+    .plan-box li {
+        font-size: 65%;
+    }
+    .plan-box .btn-hungry {
+        margin: 5px;
+        padding: 8px 20px;
+    }
+    .sign-up-section h2 {
+        margin-bottom: 20px;
+    }
+    .cityInfo {
+        font-size: 80%;
+    }
+    .cityInfo ion-icon {
+        font-size: 90%;
+    }
+    .copyRight {
+        margin-top: 0;
+    }
+    footer {
+        padding: 20px;
+    }
+    .footer-icons,
+    .footer-nav {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .footer-nav li,
+    .footer-icons li {
+        margin-right: 10px;
+    }
+}

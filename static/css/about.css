@@ -1,0 +1,176 @@
+html {
+	font-size: 62.5%;
+	font-family: sans-serif;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.mainDiv {
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		right bottom,
+		from(rgba(255, 165, 9, 0.363)),
+		to(rgba(255, 68, 0, 0.596))
+	);
+	background-image: -o-linear-gradient(
+		left top,
+		rgba(255, 165, 9, 0.363),
+		rgba(255, 68, 0, 0.596)
+	);
+	background-image: linear-gradient(
+		to right bottom,
+		rgba(255, 165, 9, 0.363),
+		rgba(255, 68, 0, 0.596)
+	);
+	font-size: 1.6rem;
+}
+
+.box {
+	width: 40rem;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	padding: 5rem;
+	background: rgba(0, 0, 0, 0.712);
+	border-radius: 1rem;
+	-webkit-box-shadow: 0.7rem 0.7rem 2rem rgba(0, 0, 0, 0.5);
+	box-shadow: 0.7rem 0.7rem 2rem rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+	color: orange;
+	margin-bottom: 3rem;
+	text-align: center;
+	text-transform: uppercase;
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		right bottom,
+		from(rgba(255, 166, 09)),
+		to(rgba(255, 68, 0))
+	);
+	background-image: -o-linear-gradient(
+		left top,
+		rgba(255, 166, 09),
+		rgba(255, 68, 0)
+	);
+	background-image: linear-gradient(
+		to right bottom,
+		rgba(255, 166, 09),
+		rgba(255, 68, 0)
+	);
+	background-clip: text;
+	-webkit-background-clip: text;
+	font-size: 3.8rem;
+	letter-spacing: 0.6rem;
+}
+
+.inputBox {
+	position: relative;
+}
+
+input {
+	width: 100%;
+	padding: 1rem;
+	font-size: 1.6rem;
+	color: rgb(255, 255, 255);
+	letter-spacing: 0.1rem;
+	margin-bottom: 3rem;
+	background-color: transparent;
+	border: none;
+	border-bottom: 0.1rem solid #eee;
+	outline: none;
+}
+
+label {
+	position: absolute;
+	background-color: transparent;
+	top: 0.7rem;
+	left: 1rem;
+	letter-spacing: 0.1rem;
+	padding: 0.5rem;
+	font-size: 1.6rem;
+	color: #fff;
+	-webkit-transition: 0.5s;
+	-o-transition: 0.5s;
+	transition: 0.5s;
+}
+
+a:link,
+a {
+	display: block;
+	width: 100%;
+	color: #fff;
+	background: orange;
+	padding: 1.5rem 2rem;
+	border-radius: 0.5rem;
+	font-size: 1.6rem;
+	text-transform: uppercase;
+	-webkit-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	border: none;
+	font-weight: 600;
+	letter-spacing: 0.2rem;
+	-webkit-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+	cursor: pointer;
+	margin-top: 1rem;
+	text-decoration: none;
+}
+a:target {
+	transform: translateY(1rem);
+}
+a:active,
+a:visited {
+	transform: translateY(1rem);
+}
+a:hover {
+	transform: translateY(-1rem);
+	box-sizing: 0.4rem 0.4rem 0.1rem rgba(0, 0, 0, 0.4);
+	background-color: rgb(255, 136, 0);
+}
+
+input:focus + label,
+input:valid + label {
+	top: -1.6rem;
+	left: 1rem;
+	font-size: 1.4rem;
+	color: orange;
+	outline: none;
+}
+
+form div:last-of-type {
+	text-align: center;
+}
+
+@media (max-width: 998px) {
+	html {
+		font-size: 55%;
+	}
+}
+
+@media (max-width: 768px) {
+	html {
+		font-size: 45%;
+	}
+}
+
+@media (max-width: 600px) {
+	html {
+		font-size: 35%;
+	}
+}

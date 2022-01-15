@@ -1,0 +1,646 @@
+{% extends 'base.html' %}
+{% block title %}
+    Dashboard
+{% endblock title %}
+{% block style %}
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+
+		html {
+			font-size: 62.5%;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+			font-family: sans-serif;
+			pointer-events: all;
+		}
+
+		body {
+			box-sizing: border-box;
+			position: relative;
+			font-family: "Lato", "Arial", sans-serif;
+			height: 100vh;
+		}
+.logo__name {
+    font-size: 4rem;
+margin-top: 3rem;}
+.container{
+	display: flex;
+	justify-self: center;
+	align-items: center;
+	flex-direction: row;
+	margin:5rem 0;
+}
+		.user__profile {
+			margin: 0 auto;
+			width: 40rem;
+			display: flex;
+			flex-direction: column;
+			padding: 2rem;
+			background: linear-gradient(to bottom right, #ffb900, #ff7730);
+			background-repeat: no-repeat;
+			box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+			border-radius: 1rem;
+			box-shadow: 0.3rem 0.3rem 1rem rgba(0, 0, 0, 0.2);
+		}
+
+		.user__picture .picBox {
+			text-align: center;
+		}
+
+		.user__picture .profilePic {
+			width: 15rem;
+			height: auto;
+			background: #eee;
+			border-radius: 50%;
+			padding: 1rem;
+			transition: all .5s;
+		}
+
+		.profilePic:hover {
+			transform: scale(1.1);
+		}
+
+		.user__profile .user__name {
+			font-size: 2.2rem;
+			padding: 1rem;
+			text-align: center;
+			margin-bottom: 1.5rem;
+			text-transform: uppercase;
+		}
+
+		.user__profile .user__about {
+			font-size: 1.8rem;
+			margin-bottom: 2rem;
+			color: #f0280e;
+		}
+
+		.user__profile .user__info {
+			list-style: none;
+			font-size: 1.8rem;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			margin-left: 1rem;
+			color: #f0280e
+		}
+
+		.heading__tirtiary {
+			font-size: 1.6rem;
+			margin-bottom: 1.2rem;
+			color: #6b0707;
+		}
+
+		.user__email {
+			margin-bottom: 0.7rem;
+		}
+
+		.user__phone {
+			margin-bottom: 0.7rem;
+		}
+
+		body {
+			background-attachment: fixed;
+			background-image: -o-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/static/images/25.jpg);
+			background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(/static/images/25.jpg);
+			background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/static/images/25.jpg);
+			height: 100vh;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+		.btn,
+		.btn:link,
+		.btn:visited {
+			text-decoration: none;
+			-webkit-transition: all 0.2s;
+			-o-transition: all 0.2s;
+			transition: all 0.2s;
+			position: relative;
+			display: inline-block;
+			font-size: 1.6rem;
+			text-align: center;
+			cursor: pointer;
+		}
+
+		.btn:hover {
+			-webkit-transform: translateY(-0.3rem);
+			-ms-transform: translateY(-0.3rem);
+			transform: translateY(-0.3rem);
+			-webkit-box-shadow: 0.5rem 0.8rem 1rem rgba(0, 0, 0, 0.2);
+			box-shadow: 0.5rem 0.8rem 1rem rgba(0, 0, 0, 0.2);
+		}
+
+		.btn:active,
+		.btn:focus {
+			-webkit-transform: translateY(-1px);
+			-ms-transform: translateY(-1px);
+			transform: translateY(-1px);
+			-webkit-box-shadow: 0.5rem 0.8rem 1rem rgba(0, 0, 0, 0.2);
+			box-shadow: 0.5rem 0.8rem 1rem rgba(0, 0, 0, 0.2);
+		}
+
+		.btn:after {
+			content: '';
+			display: inline-block;
+			height: 100%;
+			width: 100%;
+			border-radius: 1rem;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+			-webkit-transition: all 1s;
+			-o-transition: all 1s;
+			transition: all 1s;
+		}
+
+		.btn__Special {
+			border-radius: 1rem;
+			font-size: 1.6rem;
+			padding: 1rem 1rem;
+			letter-spacing: 1px;
+			font-weight: 500;
+			background: #55c57a;
+			color: #ffffff;
+			border: 1px solid #3b9458;
+		}
+
+		.btn__Special:hover,
+		.btn__Special:active {
+			background-color: #3b9458 !important;
+		}
+
+		.btn__Danger {
+			border-radius: 1rem;
+			font-size: 1.6rem;
+			padding: 1rem 1rem;
+			letter-spacing: 1px;
+			font-weight: 500;
+			color: #ffffff;
+			background-color: red;
+		}
+
+		.btn__Danger:hover {
+			background-color: rgb(172, 53, 53);
+		}
+
+		.btnBox {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			margin: 1rem 0;
+		}
+
+		button:focus {
+			outline: none;
+		}
+
+		#backDrop {
+			position: fixed;
+			width: 100%;
+			height: 100vh;
+			top: 0;
+			left: 0;
+			background: rgba(0, 0, 0, 0.75);
+			z-index: 10;
+			pointer-events: none;
+			display: none;
+		}
+
+		#backDrop.visible {
+			display: block;
+			pointer-events: all;
+		}
+
+
+		/******************** Modal ****************************/
+
+		.card {
+			font-size: 1.4rem;
+			max-width: 700px;
+			border-radius: 1rem;
+			box-shadow: 0 0.2rem 2rem rgba(0, 0, 0, 0.1);
+			padding: 2rem;
+			height: auto;
+		}
+
+		.modal {
+			position: fixed;
+			z-index: 100;
+			background: #ffffff;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			display: none;
+			transition: 2s;
+			/* outline: 1px solid #383838;
+			outline-offset: -1rem; */
+		}
+
+		.modal-1.visible {
+			display: block;
+			animation: moveUp 1s;
+		}
+
+		.modal-2.visible {
+			display: flex;
+			animation: moveUp 1s;
+		}
+
+		.form__item {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			/* padding-left:2rem ; */
+		}
+
+		.form__content {
+			display: grid;
+			overflow: auto;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			justify-items: center;
+			row-gap: .4rem;
+			column-gap: 2rem;
+		}
+
+		.modal-2 {
+			display: none;
+			flex-direction: column;
+			justify-content: flex-start;
+			gap: 2rem;
+		}
+
+		input:focus {
+			outline: none;
+			background: #fff1c4;
+		}
+
+		input,
+		textarea {
+			font: inherit;
+			border: 0.1rem solid #ccc;
+			padding: 0.64rem 0.32rem;
+			color: #383838;
+			width: 100%;
+			margin-bottom: 2rem;
+			margin-top: 1rem;
+		}
+
+
+		#deleteHallModal {
+			height: 20rem !important;
+			overflow: hidden;
+		}
+
+		.deleteModalBtn {
+			padding: 1rem 3rem;
+		}
+
+		.deleteModalBtn:not(:last-of-type) {
+			margin-right: 2rem;
+		}
+
+		.deleteModalBtnBox {
+			text-align: right;
+		}
+
+
+
+		.snackbar {
+			display: none;
+			visibility: hidden;
+			text-align: center;
+			max-width: 300px;
+			padding: 10px 20px;
+			color: indianred;
+			background-color: rgb(241, 202, 202);
+			border:1px solid indianred;
+			border-radius: 10px;
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: translate(-50%,0);
+			transition: all 1s;
+			animation: moveDown 1s;
+		}
+
+		@keyframes moveDown {
+			0%{
+				transform: translate(-50%,-20px);
+			}
+			100%{
+transform: translate(-50%,0);
+			}
+		}
+
+		.snackbar.show {
+			visibility: visible;
+			display: block;
+			color: rgb(221, 92, 92);
+		}
+
+
+		@keyframes fadein {
+			from {
+				bottom: 0;
+				opacity: 0;
+			}
+
+			to {
+				bottom: 30px;
+				opacity: 0.5;
+			}
+		}
+
+		@keyframes fadeout {
+			from {
+				bottom: 30px;
+				opacity: 0.5;
+			}
+
+			to {
+				bottom: 0;
+				opacity: 0;
+			}
+		}
+
+		.user__image {
+			vertical-align: middle;
+			max-width: 100px;
+			width: 100%;
+
+		}
+
+		.image__box {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-bottom: 2rem;
+			padding: 1rem;
+		}
+
+		.image__edit {
+			position: relative;
+			overflow: hidden;
+			display: inline-flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 15rem;
+			height: 15rem;
+			gap:0;
+		}
+
+		.uploadBtn {
+			color: gray;
+			background: transparent;
+			border-radius: 2px;
+			font-size: 18px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			display: inline-block;
+			width: 12rem;
+			text-align: center;
+
+		}
+		.uploadBtn:hover{
+			transform: scale(1.2);
+		}
+
+		.image__edit input[type=file] {
+			font-size: 100px;
+			position: absolute;
+			left: 0;
+			top: 0;
+			opacity: 0;
+		}
+		.profile__img{
+			width: 100%;
+		}
+		#error__message{
+			color: crimson;
+			text-align: center;
+		}
+	</style>
+</head>
+{% endblock style %}
+{% block content %}
+<div class="container">
+
+	<div class="modal card modal-1" id="updateModal">
+		<form action="/update/{{user.id}}" id="userform" method="post" enctype="multipart/form-data">
+			<div class="image__box">
+				<div class="image__edit" title="Change Photo">
+					<p class="uploadBtn">Change Photo</p>
+					<input type="file" name="profileImage" id='profileImage'/>
+					
+					
+					<img src="../static/images/profile.png" alt="" class="profile__img">
+				</div>
+			</div>
+			<div class="form__content">
+				<div class="form__item"><label for="name">Name</label>
+					<input type="text" id="name" name="name" required value="{{user.name}}"/>
+				</div>
+				<div class="form__item"><label for="email">Email</label>
+					<input type="email" id="email" name="email" required value="{{user.email}}"/>
+				</div>
+				<div class="form__item"><label for="password">Password</label>
+					<input type="password" id="password" name="password" required value="{{user.password}}"/>
+				</div>
+
+
+				<div class="form__item"><label for="about">About</label>
+					<textarea type="text" id="about" name="about" class="aboutBox" >
+					</textarea>
+				</div>
+
+				<div class="form__item"><label for="phone">Phone Number</label>
+					<input type="number" id="phone" name="phone" required value="{{user.phone}}"/>
+				</div>
+
+
+				<div class="form__item">
+					<div class="btnBox">
+						<a class="btn btn__Danger" id="model1Cancel" href="#">
+							Cancel
+						</a>
+						<button class="btn btn__Special" id="model1Add" type="submit">
+							Update
+						</button>
+					</div>
+				</div>
+				<label id='error__message'></label>
+			</div>
+		</form>
+	</div>
+
+	<div class="backDrop" id='backDrop'></div>
+	<div class="modal card modal-2" id="deleteModal">
+		<h2 class="modalTitle">Are you sure?</h2>
+		<p class="modalContent">
+			Are you sure you want to delete your account? This action cannot be
+			made undone!
+		</p>
+		<div class="deleteModalBtnBox">
+			<a class="btn btn__Special deleteModalBtn" id="undoDeleteModalButton">No</a>
+			<a class="btn btn__Danger deleteModalBtn" href="/delete/{{user.id}}" id='deleteModalButton'>Yes</a>
+		</div>
+	</div>
+	
+	<div class="user__profile">
+		{% if user %}
+		<div class="user__picture">
+			<div class="picBox">
+				<img src="../static/images/profile.png" alt="profile.png" class="profilePic" id='user__profile' />
+			</div>
+		</div>
+		<h2 class="user__name">{{user.name}}</h2>
+		<h3 class="heading__tirtiary">About :</h3>
+		<p class="user__about">
+			Very good guy, you can never find in the world!
+		</p>
+		<h3 class="heading__tirtiary">Contact Details :</h3>
+		<ul class="user__info">
+			<li class="user__email">{{user.email}}</li>
+			<li class="user__phone">+91 {{user.phone}}</li>
+		</ul>
+		<div class="btnBox">
+			<a href="#" class="btn btn__Special" id='updateProfileBtn'>Edit Profile</a>
+			<a href="#" class="btn btn__Danger" id='deleteProfileBtn'>Delete Profile</a>
+		</div>
+		{% else %}
+		<p>No profile data found!</p>
+		{% endif %}
+	</div>
+    </div>
+{% endblock content %}
+    
+{% block script %}
+<script>
+	//Global variables
+	const updateProfileBtn = document.getElementById('updateProfileBtn');
+	const deleteProfileBtn = document.getElementById('deleteProfileBtn');
+	const updateModal = document.getElementById('updateModal');
+	const userform = document.getElementById('userform');
+	const deleteModal = document.getElementById('deleteModal');
+	const updateModalButton = updateModal.querySelector('#model1Add');
+	const undoUpdateModalButton = updateModal.querySelector('#model1Cancel');
+	const backDrop = document.getElementById('backDrop');
+	const modalInputs = updateModal.querySelectorAll('input');
+	const undoDeleteButton = document.getElementById('undoDeleteModalButton');
+	const deleteModalButton = document.getElementById('deleteModalButton');
+
+	const backdropHandler = () => {
+		backDrop.classList.toggle('visible');
+	};
+
+	//Handling backdrop click event
+	const backdropClickHandler = () => {
+		clearInputHandler();
+		if (deleteModal.classList.contains('visible')) {
+			closeDeleteModal();
+		} else if (updateModal.classList.contains('visible')) {
+			closeUpdateModal();
+		}
+	};
+
+
+	const closeUpdateModal = () => {
+		backdropHandler();
+		clearInputHandler();
+		updateModal.classList.remove('visible');
+	};
+
+	const openDeleteModal = () => {
+		backdropHandler();
+		deleteModal.classList.add('visible');
+	};
+
+	//Function to close the delete modal
+	const closeDeleteModal = () => {
+		backdropHandler();
+		deleteModal.classList.remove('visible');
+	};
+
+	//Function to handle snack-bar
+	const displayError = (content) => {
+		const snackBar = document.getElementById('error__message');
+		snackBar.classList.add('show');
+		snackBar.innerHTML = content;
+		setTimeout(function () {
+			snackBar.classList.remove('show');
+			snackBar.innerHTML = '';
+		}, 3000);
+	};
+
+	//Function to open hall add modal
+	const openUpdateModal = (data) => {
+		backdropHandler();
+		updateModal.classList.add('visible');
+	};
+
+
+	//Function to clear inputs
+	const clearInputHandler = () => {
+		for (const input of userform) {
+			input.value = '';
+		}
+	};
+
+
+	//Function to handle form submit event and input data
+	const modalInputHandler = (event) => {
+		event.preventDefault();
+		const inputs = userform.elements;
+		const name = inputs['name'];
+		const email = inputs['email'];
+		const password = inputs['password'];
+		const about = inputs['about'];
+		const phone = inputs['phone'];
+		const image = inputs['profileImage'];
+
+
+		if (!name) {
+			return displayError('Please enter name!');
+		}
+		if (!email) {
+			return displayError('Please enter email!');
+		}
+
+		if (!phone) {
+			return displayError('Please enter phone number!');
+		}
+		if (!password) {
+			return displayError('Please enter password!');
+		}
+
+		if (name.length < 5) {
+			return displayError('Name must be of atleast 5 letters!');
+		}
+
+		userform.submit();
+
+	};
+
+
+	//Backdrop click event handler
+	backDrop.addEventListener('click', backdropClickHandler);
+	undoDeleteButton.addEventListener('click', closeDeleteModal);
+	undoUpdateModalButton.addEventListener('click', closeUpdateModal);
+	updateProfileBtn.addEventListener('click', openUpdateModal)
+	deleteProfileBtn.addEventListener('click', openDeleteModal)
+	updateModalButton.addEventListener('click', modalInputHandler)
+
+</script>
+    
+{% endblock script %}

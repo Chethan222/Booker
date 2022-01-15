@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<link rel="stylesheet" href="../static/css/grid.css" type="text/css" />
+    <!-- <link rel="stylesheet" href="../static/css/home.css"> -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400&display=swap"
+        rel="stylesheet" />
+    <title>Admin Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        h1,
+        h2,
+        h3 {
+            margin: 0;
+            color: rgb(7, 7, 7);
+            text-transform: uppercase;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            text-align: center;
+            word-spacing: 3px;
+        }
+
+        h2:after {
+            font-weight: 900;
+            color: black;
+            display: block;
+            height: 2px;
+            background-color: #e67e22;
+            content: " ";
+            margin: 0 auto;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            width: 100px;
+        }
+
+
+
+        html,
+        body {
+            background: #fff;
+            color: #555;
+            font-family: "Lato", "Arial", sans-serif;
+            font-weight: 300;
+            font-size: 20px;
+            text-rendering: optimizeLegibility;
+            overflow-x: hidden;
+        }
+
+
+        .btn:link,
+        .btn:visited {
+            display: inline-block;
+            padding: 10px 30px;
+            font-weight: 300;
+            text-decoration: none;
+            border-radius: 200px;
+            transition: background-color 0.2s, border 0.2s, color 0.2s;
+        }
+
+        .btn-primary:link,
+        .btn-primary:visited {
+            background-color: #e67e22;
+            color: #fff;
+        }
+
+        .btn-primary:hover,
+        .btn-primary:active {
+            background-color: #d16506;
+        }
+
+
+        .login__box {
+            border-radius: 8px;
+            box-shadow: -10px 10px 10px #1f1e1e;
+            background-color: #fcfcfc;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+            padding: 2rem;
+            margin-top: 30px;
+        }
+
+
+
+        .form__item {
+            padding: 1.5rem;
+            border-bottom: 1px solid #e8e8e8;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .row {
+            max-width: 1140px;
+            display: flex;
+            flex-basis: 50%;
+            margin: 0 auto;
+        }
+
+        .col {
+            flex-basis: 50%;
+            margin: 10px 0;
+        }
+
+        .clearfix {
+            zoom: 1;
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: block;
+            height: 0;
+            visibility: hidden;
+        }
+
+        .section_login {
+            width: 50%;
+            margin: 0 auto;
+            padding-bottom: 60px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="password"] {
+            display: block;
+            padding: 7px;
+            width: 100%;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+        }
+
+        input:focus {
+            border: 1px solid #af5200;
+            background-color: #f3ddbf;
+
+        }
+
+        input[type="submit"] {
+            border: 1px solid #e67e22;
+            background-color: #ffffff;
+            color: #e67e22;
+            display: inline-block;
+            padding: 10px 30px;
+            font-weight: 300;
+            text-decoration: none;
+            border-radius: 200px;
+            -webkit-transition: all 0.6s;
+            -o-transition: all 0.6s;
+            transition: all 0.6s;
+        }
+
+        input[type="submit"]:hover,
+        input[type="submit"]:active {
+            border: 1px solid #e67e22;
+            background-color: #e67e22;
+            color: #ffffff;
+        }
+
+
+        *:focus {
+            outline: none;
+        }
+
+        section {
+            margin-top: 50px !important;
+        }
+
+        .message {
+            color: #ff8080 !important;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        label {
+            display: block;
+            margin-left: 50px;
+        }
+
+        body {
+            background-attachment: fixed;
+            background-image: -o-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/static/images/25.jpg);
+            background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(/static/images/25.jpg);
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/static/images/25.jpg);
+            height: 100vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+       
+
+        .loginbtn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 1rem 0;
+        }
+
+        .messageBox {
+            color: #fff !important;
+            font-size: 20px;
+        }
+
+
+
+        .snackbar {
+            display: none;
+            visibility: hidden;
+            text-align: center;
+            max-width: 300px;
+            padding: 10px 20px;
+            color: indianred;
+            background-color: rgb(241, 202, 202);
+            border: 1px solid indianred;
+            border-radius: 10px;
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: all 1s;
+            animation: moveDown 1s;
+        }
+
+        @keyframes moveDown {
+            0% {
+                transform: translate(-50%, -20px);
+            }
+
+            100% {
+                transform: translate(-50%,0);
+            }
+        }
+
+        .snackbar.show {
+            visibility: visible;
+            display: block;
+            color: rgb(221, 92, 92);
+        }
+         .btn,
+        .btn:link,
+        .btn:visited {
+            text-decoration: none;
+            -webkit-transition: all 0.2s;
+            -o-transition: all 0.2s;
+            transition: all 0.2s;
+            position: relative;
+            display: inline-block;
+            font-size: 1.6rem;
+        }
+
+        .btn:hover {
+            -webkit-transform: translateY(-0.3rem);
+            -ms-transform: translateY(-0.3rem);
+            transform: translateY(-0.3rem);
+            -webkit-box-shadow: 0.5rem 0.8rem 1rem rgba(0, 0, 0, 0.2);
+            box-shadow: 0.5rem 0.8rem 1rem rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:active,
+        .btn:focus {
+            -webkit-transform: translateY(-1px);
+            -ms-transform: translateY(-1px);
+            transform: translateY(-1px);
+            -webkit-box-shadow: 0.5rem 0.8rem 1rem rgba(0, 0, 0, 0.2);
+            box-shadow: 0.5rem 0.8rem 1rem rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:after {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            width: 100%;
+            border-radius: 10rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            -webkit-transition: all 1s;
+            -o-transition: all 1s;
+            transition: all 1s;
+        }
+.btn__About{
+    display: block;
+    padding: .5rem 2rem;
+    margin-top: 2rem;
+    border-radius: 2rem;
+    color: #ffffff !important;
+    font-size: 1rem !important;
+}
+.btn__About__1{ border: 3px solid #ffb900 !important;}
+    </style>
+</head>
+
+<body>
+
+    <div class="section_login">
+<div><a href="/" class="btn  btn__About  btn__About__1">Go Back</a></div>
+        <div class="login__box">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <div class="snackbar">{{ messages[0] }}</div>
+            <script>
+                    const snackBar = document.querySelector('.snackbar');
+                    snackBar.classList.add('show');
+                    setTimeout(function () {
+                        snackBar.classList.remove('show');
+                    }, 3000);
+            </script>
+            {% endif %}
+            {% endwith %}
+            <h2>ADMIN LOGIN</h2>
+            <form method="post" action="/admin/login" class="contact-form" id="contactForm">
+                <div class="row">
+                    <div class="col">
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="col">
+                        <input type="email" name="email" id="email" autocomplete="off" placeholder="Your email address"
+                            required />
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col">
+                        <label>Password</label>
+                    </div>
+                    <div class="col">
+                        <input type="password" name="password" id="password" autocomplete="off"
+                            placeholder="Enter password" required />
+                    </div>
+                </div>
+
+                <div class="row loginbtn">
+                    <input type="submit" value="Login" />
+                </div>
+            </form>
+            
+        </div>
+    </div>
+
+</body>
+
+</html>

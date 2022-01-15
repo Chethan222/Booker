@@ -1,0 +1,1 @@
+ADMIN = {'email':'admin@tietheknot.com','password':'admin','id':'ehnfcowekrefjwefnkieknknjnkjhvjvr'}

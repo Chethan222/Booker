@@ -1,0 +1,441 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			content="Tie The Knot is a premium marriage hall booking web-service with the mission to bring affordable and best marriage halls to as many people as possible"
+		/>
+		    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400&display=swap" rel="stylesheet" />
+
+		<link
+			rel="stylesheet"
+			href="../static/css/queries.css"
+			type="text/css"
+		/>
+		<link rel="stylesheet" href="../static/css/grid.css" type="text/css" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+
+		<title>{% block title %} {% endblock title %}</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+			integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<script
+			type="module"
+			src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+		></script>
+		<script
+			nomodule
+			src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+		></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+			}
+
+			html {
+				scroll-behavior: smooth;
+			}
+			html,
+			body {
+				background: #fff;
+				color: #555;
+				font-family: 'Lato', 'Arial', sans-serif;
+				font-weight: 300;
+				font-size: 20px;
+				text-rendering: optimizeLegibility;
+				overflow-x: hidden;
+			}
+			/***************************** Main Nav ************************************/
+			.row {
+				max-width: 1140px;
+				margin: 0 auto;
+			}
+
+			.clearfix {
+				zoom: 1;
+			}
+
+			.clearfix::after {
+				content: '';
+				clear: both;
+				display: block;
+				height: 0;
+				visibility: hidden;
+			}
+			nav {
+				margin-top: 1rem;
+			}
+			/* .nav {
+				display: flex !important;
+				justify-content: space-between !important;
+				align-items: center !important;
+			} */
+			.logo__name {
+				/* justify-self: flex-start; */
+				float: left;
+			}
+			/* .navBar {
+				justify-self: flex-end;
+			} */
+			.navlogo {
+				height: 100px;
+				width: auto;
+				float: left;
+				margin-top: 20px;
+				-webkit-transition: 1s;
+				-o-transition: 1s;
+				transition: 1s;
+				transform: scale(0.6);
+			}
+
+
+			.navBar {
+				float: right;
+				list-style: none;
+				margin-top: 40px;
+			}
+
+			.navBar li {
+				color: #fff;
+				display: inline-block;
+				margin-left: 40px;
+			}
+
+			.navBar .a {
+				padding: 8px 0;
+			}
+
+			.navBar li a:link,
+			.navBar li a:visited {
+				color: #fff;
+				word-spacing: 3px;
+				padding: 8px 0;
+				text-decoration: none;
+				text-transform: uppercase;
+				font-size: 90%;
+				border-bottom: 2px solid transparent;
+				-webkit-transition: border-bottom 0.4s;
+				-o-transition: border-bottom 0.4s;
+				transition: border-bottom 0.4s;
+			}
+
+			.navBar li a:hover,
+			.navBar li a:active {
+				border-bottom: 2px solid #e67e22;
+			}
+
+			/************************ Sticky Nav ********************/
+
+			.sticky-nav {
+				z-index: 9999;
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				background-color: rgba(36, 31, 31, 0.835);
+				-webkit-box-shadow: 0 2px 5px #3b3838b6;
+				box-shadow: 0 2px 5px #3b3838b6;
+			}
+
+			.sticky-nav .navBar li a:link,
+			.sticky-nav .navBar li a:visited {
+				color: rgb(253, 253, 253);
+				padding: 18px 0;
+			}
+
+			.sticky-nav .navBar {
+				margin-top: 20px;
+			}
+
+			.sticky-nav .navlogo {
+				display: none;
+			}
+
+			.sticky-nav .navlogo-black {
+				display: block;
+			}
+
+			.logo__name {
+				font-size: 2rem;
+				color: #ffffff;
+				position: relative;
+				display: inline-block;
+				margin-top: 1rem;
+				font-family: 'Mea Culpa', cursive;
+				/* font-family: 'Oooh Baby', cursive; */
+			}
+
+			.logo__small {
+				font-size: 1rem;
+			}
+
+			.navlogo {
+				position: absolute;
+				bottom: 0;
+				left: 42%;
+				transform: translate(-50%, 0) scale(0.6);
+			}
+
+			/******************************** Mobile Nav ***********************/
+
+			.mobileNavIcon {
+				float: right;
+				margin-top: 3px;
+				cursor: pointer;
+				display: none;
+			}
+
+			.mobileNavIcon i {
+				font-size: 200%;
+				color: #f4f4f4;
+			}
+
+			.snackbar {
+				display: none;
+				visibility: hidden;
+				text-align: center;
+				max-width: 300px;
+				padding: 10px 20px;
+				color: indianred;
+				background-color: rgb(241, 202, 202);
+				border: 1px solid indianred;
+				border-radius: 10px;
+				position: absolute;
+				top: 0;
+				left: 50%;
+				transform: translate(-50%, 0);
+				transition: all 1s;
+				animation: moveDown 1s;
+			}
+
+			@keyframes moveDown {
+				0% {
+					transform: translate(-50%, -20px);
+				}
+				100% {
+					transform: translate(-50%, 0);
+				}
+			}
+
+			.snackbar.show {
+				visibility: visible;
+				display: block;
+				color: rgb(221, 92, 92);
+			}
+
+			@keyframes fadein {
+				from {
+					bottom: 0;
+					opacity: 0;
+				}
+
+				to {
+					bottom: 30px;
+					opacity: 0.5;
+				}
+			}
+
+			@keyframes fadeout {
+				from {
+					bottom: 30px;
+					opacity: 0.5;
+				}
+
+				to {
+					bottom: 0;
+					opacity: 0;
+				}
+			}
+
+			/******************************** footer *********************/
+
+			footer {
+				background-color: #333;
+				padding: 50px 50px 30px 50px;
+				font-size: 80%;
+			}
+
+			.footer-nav,
+			.footer-icons {
+				list-style: none;
+			}
+
+			.footer-icons {
+				float: right;
+				width: 100%;
+			}
+
+			.footer-nav {
+				float: left;
+				width: 100%;
+			}
+
+			.footer-nav li,
+			.footer-icons li {
+				display: inline-block;
+				margin-right: 20px;
+				padding: 2%;
+			}
+
+			.footer-nav li:last-child,
+			.footer-icons li:last-child {
+				display: inline-block;
+				margin-right: 0;
+			}
+
+			.footer-nav li a:link,
+			.footer-nav li a:visited,
+			.footer-icons li a:link,
+			.footer-icons li a:visited {
+				text-decoration: none;
+				color: #888;
+				border: 0;
+				-webkit-transition: color 0.2s;
+				-o-transition: color 0.2s;
+				transition: color 0.2s;
+			}
+
+			.footer-nav li a:hover,
+			.footer-nav li a:active {
+				color: rgb(204, 194, 194);
+			}
+
+			footer div p {
+				color: #888;
+				text-align: center;
+				margin-top: 20px;
+			}
+
+			.footer-icons li a:link,
+			.footer-icons li a:visited {
+				font-size: 150%;
+			}
+
+			.fa-facebook-square,
+			.fa-instagram,
+			.fa-envelope,
+			.fa-twitter {
+				-webkit-transition: color 0.5s;
+				-o-transition: color 0.5s;
+				transition: color 0.5s;
+			}
+
+			.fa-facebook-square:hover {
+				color: #3b5998;
+			}
+
+			.fa-instagram:hover {
+				color: rgb(248, 9, 81);
+			}
+
+			.fa-envelope:hover {
+				color: #dd4b39;
+			}
+
+			.fa-twitter:hover {
+				color: #00aced;
+			}
+		</style>
+		{% block style %} {% endblock style %}
+		<link
+			href="https://fonts.googleapis.com/css2?family=Mea+Culpa&family=Oooh+Baby&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+
+	<body>
+		{% with messages = get_flashed_messages() %} {% if messages %}
+		<div class="snackbar">{{ messages[0] }}</div>
+		<script>
+			const snackBar = document.querySelector('.snackbar');
+			snackBar.classList.add('show');
+			setTimeout(function () {
+				snackBar.classList.remove('show');
+			}, 3000);
+		</script>
+		{% endif %} {% endwith %}
+		<nav>
+			<div class="row nav">
+				<span class="logo__name"
+					>Tie <span class="logo__small">the</span> Knot
+					<img
+						class="navlogo"
+						src="../static/images/logo.png"
+						alt="Logo"
+					/>
+				</span>
+				<ul class="navBar jqueryAnim" id="navScroller">
+					<li><a href="/">Home</a></li>
+					{% if user %}
+					<li><a href="/dashboard">Dashboard</a></li>
+					<li><a href="/logout">Logout</a></li>
+
+					{% else %}
+					<li><a href="/login">Login</a></li>
+					<li><a href="/register">Register</a></li>
+					{% endif %}
+					<li><a href="/halls">Book Hall Now</a></li>
+					<li><a href="#cities">About</a></li>
+				</ul>
+				<a class="mobileNavIcon jqueryMblNav"
+					><i class="fas fa-bars"></i
+				></a>
+			</div>
+		</nav>
+
+		{% block content %} {% endblock content %}
+
+		<footer>
+			<div class="row">
+				<div class="col span-2-of-3">
+					<ul class="footer-nav">
+						<li><a href="#">About us</a></li>
+						<li><a href="#">Blog</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+				</div>
+				<div class="col span-1-of-3">
+					<ul class="footer-icons">
+						<li>
+							<a href="#"
+								><i class="fab fa-facebook-square"></i
+							></a>
+						</li>
+						<li>
+							<a href="#"><i class="fab fa-instagram"></i></a>
+						</li>
+						<li>
+							<a href="#"><i class="far fa-envelope"></i></a>
+						</li>
+						<li>
+							<a href="#"><i class="fab fa-twitter"></i></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div>
+				<p class="copyRight">
+					Copyright &copy; 2021 by TieTheKnot. All rights reserved.
+				</p>
+			</div>
+		</footer>
+	</body>
+	{% block script %}
+		
+	{% endblock script %}
+</html>

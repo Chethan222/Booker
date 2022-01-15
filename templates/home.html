@@ -1,0 +1,1275 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description"
+		content="Tie The Knot is a premium marriage hall booking web-service with the mission to bring affordable and best marriage halls to as many people as possible" />
+	<link rel="stylesheet" href="../static/css/queries.css" type="text/css" />
+	<link rel="stylesheet" href="../static/css/grid.css" type="text/css" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" />
+
+	<title>Welcome to TieTheKnot.</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+		integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400&display=swap"
+		rel="stylesheet" />
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Mea+Culpa&family=Oooh+Baby&display=swap" rel="stylesheet">
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+
+		html {
+			scroll-behavior: smooth;
+		}
+
+		section {
+			padding-bottom: 60px;
+		}
+
+		h1,
+		h2,
+		h3 {
+			margin: 0;
+			color: rgb(7, 7, 7);
+			text-transform: uppercase;
+			font-weight: 300;
+			letter-spacing: 1px;
+		}
+
+		h1 {
+			margin: 0;
+		}
+
+		h2 {
+			text-align: center;
+			word-spacing: 3px;
+		}
+
+		h2:after {
+			font-weight: 900;
+			color: black;
+			display: block;
+			height: 2px;
+			background-color: #e67e22;
+			content: " ";
+			margin: 0 auto;
+			margin-top: 30px;
+			width: 100px;
+		}
+
+		h3 {
+			font-size: 110%;
+			margin-bottom: 15px;
+		}
+
+		html,
+		body {
+			background: #fff;
+			color: #555;
+			font-family: "Lato", "Arial", sans-serif;
+			font-weight: 300;
+			font-size: 20px;
+			text-rendering: optimizeLegibility;
+			overflow-x: hidden;
+		}
+
+		.row {
+			max-width: 1140px;
+			margin: 0 auto;
+		}
+
+		.clearfix {
+			zoom: 1;
+		}
+
+		.clearfix::after {
+			content: "";
+			clear: both;
+			display: block;
+			height: 0;
+			visibility: hidden;
+		}
+
+
+		/* ========================  Header Section =========================================*/
+
+		header {
+			background-attachment: fixed;
+			background-image: -o-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(static/images/25.jpg);
+			background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(static/images/25.jpg);
+			background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(static/images/25.jpg);
+			height: 100vh;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+		.hero-text-box {
+			text-align: center;
+			position: absolute;
+			width: 1140px;
+			top: 50%;
+			left: 50%;
+			-webkit-transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+		}
+
+		.hero-text-box h1 {
+			text-align: center;
+			font-size: 240%;
+			letter-spacing: 1px;
+			word-spacing: 3px;
+			font-weight: 300;
+			text-transform: uppercase;
+			color: #fff;
+		}
+
+		.blinkCursor {
+			-webkit-transition: all 0.1s;
+			-o-transition: all 0.1s;
+			transition: all 0.1s;
+			-webkit-animation: blink 0.8s ease-in-out;
+			animation: blink 0.8s ease-in-out;
+			-webkit-animation-iteration-count: infinite;
+			animation-iteration-count: infinite;
+		}
+
+		@-webkit-keyframes blink {
+			0% {
+				opacity: 0;
+			}
+
+			50% {
+				opacity: 0;
+			}
+
+			100% {
+				opacity: 1;
+			}
+		}
+
+		@keyframes blink {
+			0% {
+				opacity: 0;
+			}
+
+			50% {
+				opacity: 0;
+			}
+
+			100% {
+				opacity: 1;
+			}
+		}
+
+
+		/***************************** Main Nav ************************************/
+
+		.navlogo {
+			height: 100px;
+			width: auto;
+			float: left;
+			margin-top: 20px;
+			-webkit-transition: 1s;
+			-o-transition: 1s;
+			transition: 1s;
+			transform: scale(.6);
+
+		}
+
+		.navlogo-black {
+			height: 50px;
+			width: auto;
+			float: left;
+			margin: 5px 0;
+			display: none;
+		}
+
+		.navBar {
+			float: right;
+			list-style: none;
+			margin-top: 40px;
+		}
+
+		.navBar li {
+			color: #fff;
+			display: inline-block;
+			margin-left: 40px;
+		}
+
+		.navBar .a {
+			padding: 8px 0;
+		}
+
+		.navBar li a:link,
+		.navBar li a:visited {
+			color: #fff;
+			word-spacing: 3px;
+			padding: 8px 0;
+			text-decoration: none;
+			text-transform: uppercase;
+			font-size: 90%;
+			border-bottom: 2px solid transparent;
+			-webkit-transition: border-bottom 0.4s;
+			-o-transition: border-bottom 0.4s;
+			transition: border-bottom 0.4s;
+		}
+
+		.navBar li a:hover,
+		.navBar li a:active {
+			border-bottom: 2px solid #e67e22;
+		}
+
+
+		/************************ Sticky Nav ********************/
+
+		.sticky-nav {
+			z-index: 9999;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			background-color: rgba(36, 31, 31, 0.835);
+			-webkit-box-shadow: 0 2px 5px #3b3838b6;
+			box-shadow: 0 2px 5px #3b3838b6;
+		}
+
+		.sticky-nav .navBar li a:link,
+		.sticky-nav .navBar li a:visited {
+			color: rgb(253, 253, 253);
+			padding: 18px 0;
+		}
+
+		.sticky-nav .navBar {
+			margin-top: 20px;
+		}
+
+		.sticky-nav .navlogo {
+			display: none;
+		}
+
+		.sticky-nav .navlogo-black {
+			display: block;
+		}
+
+
+		/******************************** Mobile Nav ***********************/
+
+		.mobileNavIcon {
+			float: right;
+			margin-top: 3px;
+			cursor: pointer;
+			display: none;
+		}
+
+		.mobileNavIcon i {
+			font-size: 200%;
+			color: #f4f4f4;
+		}
+
+
+		/* ========================   Buttons =========================================*/
+
+		.btn:link,
+		.btn:visited {
+			display: inline-block;
+			padding: 10px 30px;
+			font-weight: 300;
+			text-decoration: none;
+			border-radius: 200px;
+			-webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
+			-o-transition: background-color 0.2s, border 0.2s, color 0.2s;
+			transition: background-color 0.2s, border 0.2s, color 0.2s;
+			margin-right: 20px;
+		}
+
+		.btn-hungry:link,
+		.btn-hungry:visited {
+			background-color: #e67e22;
+			color: #fff;
+		}
+
+		.btn-hungry:hover,
+		.btn-hungry:active {
+			/* background-color: transparent;
+   border: 1px solid #e67e22;
+    color: #e67e22; */
+			background-color: #d16506;
+		}
+
+		.btn-show-more:link,
+		.btn-show-more:visited {
+			border: 1px solid #e67e22;
+			color: #e67e22;
+		}
+
+		.btn-show-more:hover,
+		.btn-show-more:active {
+			background-color: #d16506;
+			color: #fff;
+		}
+
+		section {
+			padding: 50px 0 30px 0;
+		}
+
+
+		/*======================== Section1 ===================================*/
+
+		section .aboutContent {
+			line-height: 145%;
+			width: 70%;
+			margin-left: 15%;
+			margin-top: 14px;
+			margin-bottom: 40px;
+		}
+
+		.box {
+			padding: 1%;
+		}
+
+		.card {
+			-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+			-webkit-transition: 0.3s;
+			-o-transition: 0.3s;
+			transition: 0.3s;
+		}
+
+		.card:hover {
+			-webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+			box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+		}
+
+		.shadow-box {
+			-webkit-box-shadow: -10px 10px 10px #dfd4d4;
+			box-shadow: -10px 10px 10px #dfd4d4;
+		}
+
+		section .box p {
+			font-size: 90%;
+			line-height: 145%;
+		}
+
+
+		/*=============== ICONS ================================*/
+
+		.section-feature ion-icon {
+			font-size: 270%;
+			display: block;
+			color: #be5e0a;
+			margin-bottom: 10px;
+		}
+
+
+		/*======================== Section2 ===================================*/
+
+		.section-items {
+			width: 100%;
+			display: block;
+			padding-bottom: 0;
+		}
+
+		section .section-items .items {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			width: 100%;
+		}
+
+		section .items li {
+			margin: 0;
+			padding: 0;
+			display: block;
+			float: left;
+			width: 25%;
+		}
+
+		section .items .itemPhoto {
+			width: 100%;
+			margin: 0;
+			overflow: hidden;
+			background: rgba(0, 0, 0, 1);
+		}
+
+		section .itemPhoto img {
+			width: 100%;
+			margin: 0;
+			height: auto;
+			-webkit-transform: scale(1.15);
+			-ms-transform: scale(1.15);
+			transform: scale(1.15);
+			-webkit-transition: opacity 2s, -webkit-transform 2s;
+			transition: opacity 2s, -webkit-transform 2s;
+			-o-transition: transform 2s, opacity 2s;
+			transition: transform 2s, opacity 2s;
+			transition: transform 2s, opacity 2s, -webkit-transform 2s;
+			opacity: 0.7;
+		}
+
+		.itemPhoto img:hover {
+			opacity: 1;
+			-webkit-transform: scale(1.05);
+			-ms-transform: scale(1.05);
+			transform: scale(1.05);
+		}
+
+
+		/*======================== Section3 ===================================*/
+
+		.section-work {
+			background-color: #f4f4f4;
+			padding-top: 60px;
+		}
+
+		section .workHeading {
+			display: block;
+			margin-bottom: 20px;
+		}
+
+		.workHeading h1 {
+			text-align: center;
+		}
+
+		.stepBox:first-child {
+			margin-top: 30px;
+			text-align: right;
+			padding-right: 3%;
+		}
+
+		.stepBox:last-child {
+			margin-top: 30px;
+			padding-left: 3%;
+		}
+
+		.btn-app img {
+			height: 50px;
+			margin-left: 30px;
+			width: auto;
+		}
+
+		.btn-app:link,
+		.btn-app:visited {
+			border: 0;
+		}
+
+		.appScreen {
+			width: 40%;
+		}
+
+		.worksStep {
+			margin-bottom: 50px;
+		}
+
+		.worksStep:last-of-type {
+			margin-bottom: 80px;
+		}
+
+		.worksStep div {
+			color: #d16506;
+			border: 2px solid #d16506;
+			display: inline-block;
+			border-radius: 50%;
+			height: 50px;
+			width: 50px;
+			float: left;
+			text-align: center;
+			padding: 5px;
+			font-size: 150%;
+			margin-right: 30px;
+		}
+
+
+		/*========================= Section4 ==============================*/
+
+		.section-cities {
+			width: 100%;
+		}
+
+		.cityInfo ion-icon {
+			font-size: 90%;
+			display: inline-block;
+			color: #d16506;
+			margin-right: 10px;
+		}
+
+		.box img {
+			margin-right: 20px;
+			width: 100%;
+			height: auto;
+		}
+
+		.cityInfo {
+			margin: 10px 10px;
+		}
+
+		.cityInfo a:link,
+		.cityInfo a:visited {
+			color: #e67e22;
+			text-decoration: none;
+			padding-bottom: 1px;
+			border-bottom: 1px solid #e67e22;
+			-webkit-transition: border-bottom 0.2s, color 0.2s;
+			-o-transition: border-bottom 0.2s, color 0.2s;
+			transition: border-bottom 0.2s, color 0.2s;
+		}
+
+		.cityInfo a:hover,
+		.cityInfo a:active {
+			color: #571504;
+			border-bottom: 1px solid transparent;
+		}
+
+		.cityTitle {
+			font-size: 100%;
+			font-weight: 500;
+			display: block;
+			margin: 10px 10px;
+			letter-spacing: 2px;
+		}
+
+		.section-cities h2 {
+			margin-bottom: 20px;
+		}
+
+
+		/*=========================== Section 5 =====================================*/
+
+		.testimonials {
+			background: -o-linear-gradient(rgb(1, 1, 1, 0.7), rgb(1, 1, 1, 0.7)), url(../images/back-customers.jpg);
+			background: -webkit-gradient(linear, left top, left bottom, from(rgb(1, 1, 1, 0.7)), to(rgb(1, 1, 1, 0.7))), url(../images/back-customers.jpg);
+			background: linear-gradient(rgb(1, 1, 1, 0.7), rgb(1, 1, 1, 0.7)), url(../images/back-customers.jpg);
+			background-repeat: no-repeat;
+			background-size: cover;
+			color: white;
+			background-attachment: fixed;
+		}
+
+		.testimonials h2 {
+			color: white;
+		}
+
+		blockquote {
+			padding: 2%;
+			font-style: italic;
+			line-height: 145%;
+			position: relative;
+			margin-top: 40px;
+		}
+
+		cite {
+			font-size: 90%;
+			margin-top: 25px;
+			display: block;
+		}
+
+		blockquote:before {
+			content: "\201c";
+			display: block;
+			font-size: 400%;
+			position: absolute;
+			top: 0;
+			left: -5px;
+		}
+
+		cite img {
+			height: 45px;
+			border-radius: 50%;
+			margin-right: 10px;
+			vertical-align: middle;
+		}
+
+
+		/*=========================== Section 6 =====================================*/
+
+		.sign-up-section {
+			background-color: #f4f4f4;
+			padding-bottom: 50px;
+		}
+
+		.plan-box {
+			margin-top: 20px;
+			background-color: white;
+			border-radius: 8px;
+			width: 80%;
+			margin-left: 10%;
+			-webkit-box-shadow: -10px 10px 10px #dfd4d4;
+			box-shadow: -10px 10px 10px #dfd4d4;
+		}
+
+		.plan-box div {
+			padding: 15px;
+			border-bottom: 1px solid #e8e8e8;
+		}
+
+		.plan-price {
+			font-size: 200%;
+			margin-bottom: 10px;
+			color: #e67e22;
+		}
+
+		.plan-price span {
+			font-size: 50%;
+			font-weight: 300;
+		}
+
+		.plan-price-meal {
+			font-size: 80%;
+			font-weight: 350;
+		}
+
+		.plan-box ul {
+			list-style: none;
+		}
+
+		.plan-box ul li {
+			padding: 5px 0;
+		}
+
+		.plan-box ion-icon {
+			color: #e67e22;
+		}
+
+		.plan-box div:last-child {
+			text-align: center;
+			border: none;
+		}
+
+		.plan-box div:first-child {
+			text-align: center;
+			border: none;
+			background-color: #fcfcfc;
+			border-top-right-radius: 5px;
+			border-top-left-radius: 5px;
+		}
+
+
+		/******************************** Section 7 ***************************/
+
+		/******************************** footer *********************/
+
+
+		/* i{
+    color: #e67e22;
+} */
+
+		footer {
+			background-color: #333;
+			padding: 50px 50px 30px 50px;
+			font-size: 80%;
+		}
+
+		.footer-nav,
+		.footer-icons {
+			list-style: none;
+		}
+
+		.footer-icons {
+			float: right;
+			width: 100%;
+		}
+
+		.footer-nav {
+			float: left;
+			width: 100%;
+		}
+
+		.footer-nav li,
+		.footer-icons li {
+			display: inline-block;
+			margin-right: 20px;
+			padding: 2%;
+		}
+
+		.footer-nav li:last-child,
+		.footer-icons li:last-child {
+			display: inline-block;
+			margin-right: 0;
+		}
+
+		.footer-nav li a:link,
+		.footer-nav li a:visited,
+		.footer-icons li a:link,
+		.footer-icons li a:visited {
+			text-decoration: none;
+			color: #888;
+			border: 0;
+			-webkit-transition: color 0.2s;
+			-o-transition: color 0.2s;
+			transition: color 0.2s;
+		}
+
+		.footer-nav li a:hover,
+		.footer-nav li a:active {
+			color: rgb(204, 194, 194);
+		}
+
+		footer div p {
+			color: #888;
+			text-align: center;
+			margin-top: 20px;
+		}
+
+		.footer-icons li a:link,
+		.footer-icons li a:visited {
+			font-size: 150%;
+		}
+
+		.fa-facebook-square,
+		.fa-instagram,
+		.fa-envelope,
+		.fa-twitter {
+			-webkit-transition: color 0.5s;
+			-o-transition: color 0.5s;
+			transition: color 0.5s;
+		}
+
+		.fa-facebook-square:hover {
+			color: #3b5998;
+		}
+
+		.fa-instagram:hover {
+			color: rgb(248, 9, 81);
+		}
+
+		.fa-envelope:hover {
+			color: #dd4b39;
+		}
+
+		.fa-twitter:hover {
+			color: #00aced;
+		}
+
+
+		/******************************* Animation ****************************/
+
+		#changeContent {
+			-webkit-transition: 1s;
+			-o-transition: 1s;
+			transition: 1s;
+			color: #d16506;
+			font-weight: 600;
+		}
+
+		.jquery-wp-1,
+		.jquery-wp-2,
+		.jquery-wp-3 {
+			opacity: 0;
+			-webkit-animation-duration: 1s;
+			animation-duration: 1s;
+		}
+
+		.jquery-wp-4 {
+			-webkit-animation-duration: 1s;
+			animation-duration: 1s;
+		}
+
+		.jquery-wp-1.animated,
+		.jquery-wp-2.animated,
+		.jquery-wp-3.animated {
+			opacity: 1;
+		}
+
+
+		/* SnackBar */
+        .snackbar {
+            display: none;
+            visibility: hidden;
+            text-align: center;
+            max-width: 300px;
+            padding: 10px 20px;
+            color: rgb(255, 255, 255);
+            background-color: rgba(8, 8, 8, 0.4);
+            border: 1px solid rgb(255, 255, 255);
+            border-radius: 10px;
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: all 1s;
+            animation: moveDown 1s;
+        }
+
+        @keyframes moveDown {
+            0% {
+                transform: translate(-50%, -20px);
+            }
+
+            100% {
+                transform: translate(-50%,0);
+            }
+        }
+
+        .snackbar.show {
+            visibility: visible;
+            display: block;
+        }
+
+		.alcenter {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
+		}
+
+		.logo__name {
+			font-size: 2rem;
+			color: #ffffff;
+			position: relative;
+			display: inline-block;
+			margin-top: 1rem;
+			font-family: 'Mea Culpa', cursive;
+			/* font-family: 'Oooh Baby', cursive; */
+		}
+
+		.logo__small {
+			font-size: 1rem;
+		}
+
+		.navlogo {
+			position: absolute;
+			bottom: 0;
+			left: 42%;
+			transform: translate(-50%, 0) scale(.6);
+		}
+	</style>
+</head>
+
+<body>
+	{% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <div class="snackbar">{{ messages[0] }}</div>
+            <script>
+                    const snackBar = document.querySelector('.snackbar');
+                    snackBar.classList.add('show');
+                    setTimeout(function () {
+                        snackBar.classList.remove('show');
+                    }, 3000);
+            </script>
+            {% endif %}
+            {% endwith %}
+	<header>
+		<nav>
+			<div class="row nav">
+				<br>
+
+				<span class="logo__name">Tie <span class="logo__small">the</span> Knot
+					<img class="navlogo" src="../static/images/logo.png" alt="Logo" />
+				</span>
+				</span>
+
+				<ul class="navBar jqueryAnim" id="navScroller">
+					<li><a href="#work">How it works</a></li>
+					{% if user %}
+					<li><a href="/dashboard">Dashboard</a></li>
+					<li><a href="/logout">Logout</a></li>
+					
+					{% else %}
+					<li><a href="/login">Login</a></li>
+					<li><a href="/register">Register</a></li>
+					{% endif %}
+					<li><a href="/halls">Book Hall Now</a></li>
+					<li><a href="#cities">About</a></li>
+				</ul>
+				<a class="mobileNavIcon jqueryMblNav"><i class="fas fa-bars"></i></a>
+			</div>
+		</nav>
+		<div class="hero-text-box">
+			<h1>
+				Hello There,<br>
+				<span id="changeContent"></span><span class="blinkCursor">&nbsp;|</span>
+			</h1>
+			<a href="#" class="btn btn-hungry scroll-to-plans">I'm excited</a>
+			<a href="#" class="btn btn-show-more scroll-to-start">Show me more</a>
+		</div>
+	</header>
+	<section class="section-feature" id="food">
+		<div class="row">
+			<h2>We build your dream into reality.</h2>
+			<p class="aboutContent">
+				Hello, we're TieTheKnot, your new premium hall
+				booking service. We know you're always busy. No time for
+				searching your dream hall. So let us take care of that, we're really good at
+				it, we promise!
+			</p>
+		</div>
+		<div class="row" id="wp-1">
+			<div class="col span-1-of-4 box">
+				<ion-icon class="bigIcon" name="infinite-outline"></ion-icon>
+				<h3>Creative Artists</h3>
+				<p>
+					Never think again! We really mean that. Our subscription
+					plans include up to 365 days/year coverage. You can also
+					choose to hall more flexibly if that's your style
+				</p>
+			</div>
+			<div class="col span-1-of-4 box">
+				<ion-icon class="bigIcon" name="nutrition-outline"></ion-icon>
+				<h3>100% confident</h3>
+
+				<p>
+					All our arrangers are best, talented and creative. We have trained artists
+					who can fulfil your dream with memorable designs!
+				</p>
+			</div>
+			<div class="col span-1-of-4 box">
+				<ion-icon class="bigIcon" name="stopwatch-outline"></ion-icon>
+				<h3>Ready in half day</h3>
+				<p>
+					You're only half day away from your memorable and
+					excited events. We
+					work with the best artists and designers in each town to ensure that
+					you're 100% happy.
+				</p>
+			</div>
+			<div class="col span-1-of-4 box">
+				<ion-icon class="bigIcon" name="pricetag-outline"></ion-icon>
+				<h3>Dream anything</h3>
+				<p>
+					We don't limit your creativity, which means you can
+					imagine whatever you feel like. You can also choose from
+					our lists containing over 1000 awsome designes. It's up to
+					you!
+				</p>
+			</div>
+		</div>
+	</section>
+	<section class="section-items">
+		<ul class="items clearfix">
+			<li>
+				<figure class="itemPhoto">
+					<img src="../static/images/20.jpg" alt="Korean bibimbap with egg and vegetables" />
+				</figure>
+			</li>
+			<li>
+				<figure class="itemPhoto">
+					<img src="../static/images/21.jpg" alt="Simple italian pizza with cherry tomatoes" />
+				</figure>
+			</li>
+			<li>
+				<figure class="itemPhoto">
+					<img src="../static/images/22.jpg" alt="Chicken breast steak with vegetables" />
+				</figure>
+			</li>
+			<li>
+				<figure class="itemPhoto">
+					<img src="../static/images/23.jpg" alt="Autumn pumpkin soup" />
+				</figure>
+			</li>
+		</ul>
+		<ul class="items clearfix">
+			<li>
+				<figure class="itemPhoto">
+					<img src="../static/images/26.jpg" alt="Paleo beef steak with vegetables" />
+				</figure>
+			</li>
+			<li>
+				<figure class="itemPhoto">
+					<img src="../static/images/27.jpg" alt="Healthy baguette with egg and vegetables" />
+				</figure>
+			</li>
+			<li>
+				<figure class="itemPhoto">
+					<img src="../static/images/28.jpg" alt="Burger with cheddar and bacon" />
+				</figure>
+			</li>
+			<li>
+				<figure class="itemPhoto">
+					<img src="../static/images/33.jpg" alt="Granola with cherries and strawberries" />
+				</figure>
+			</li>
+		</ul>
+	</section>
+	<section class="section-work" id="work">
+		<div class="row workHeading">
+			<h2>How it works &mdash; Simple as 1, 2, 3</h2>
+		</div>
+		<div class="row">
+			<div class="col span-1-of-2 alcenter" id="wp-2">
+				<img class="appScreen" src="../static/images/27.jpg" alt="Company app picture" />
+			</div>
+			<div class="col span-1-of-2 stepBox">
+				<div class="worksStep">
+					<div class="numAnim">1</div>
+					<p>
+						Choose the subscription plan that best fits your
+						needs and sign up
+					</p>
+				</div>
+				<div class="worksStep">
+					<div class="numAnim">2</div>
+					<p>
+						Order your dream hall using our mobile app or
+						website. Or you can even call us!
+					</p>
+				</div>
+				<div class="worksStep">
+					<div class="numAnim">3</div>
+					<p>
+						Enjoy your memorable wedding! See you
+						the next time!
+					</p>
+				</div>
+				<a href="#" class="btn-app"><img src="../static/images/download-app-android.png"
+						alt="Play Store Picture" /></a>
+			</div>
+		</div>
+	</section>
+	<section class="section-cities" id="cities">
+		<div class="row">
+			<h2>We're currently in these cities</h2>
+		</div>
+		<div class="row" id="wp-3">
+			<div class="col span-1-of-4 box shadow-box">
+				<img src="../static/images/mangalore.jpg" alt="Mangalore.jpg" />
+				<div class="cityTitle">Mangalore</div>
+				<div class="cityInfo">
+					<ion-icon name="person-outline"></ion-icon>
+					1600+ happy customers
+				</div>
+				<div class="cityInfo">
+					<ion-icon name="restaurant-outline"></ion-icon>
+					60+ top arrangers
+				</div>
+				<div class="cityInfo">
+					<ion-icon name="logo-twitter"></ion-icon>
+					<a href="#">@tietheknot-design</a>
+				</div>
+			</div>
+			<div class="col span-1-of-4 box shadow-box">
+				<img src="../static/images/mumbai.jpg" alt="Mumbai.jpg" />
+				<div class="cityTitle">Mumbai</div>
+				<div class="cityInfo">
+					<ion-icon name="person-outline"></ion-icon>
+
+					3700+ happy customers
+				</div>
+				<div class="cityInfo">
+					<ion-icon name="restaurant-outline"></ion-icon>
+					160+ top arrangers
+				</div>
+				<div class="cityInfo">
+					<ion-icon name="logo-twitter"></ion-icon>
+					<a href="#">@tietheknot-design_mum</a>
+				</div>
+			</div>
+			<div class="col span-1-of-4 box shadow-box">
+				<img src="../static/images/bangalore.jpg" alt="Bangalore.jpg" />
+				<div class="cityTitle">Bangalore</div>
+				<div class="cityInfo">
+					<ion-icon name="person-outline"></ion-icon>
+
+					1200+ happy customers
+				</div>
+				<div class="cityInfo">
+					<ion-icon name="restaurant-outline"></ion-icon>
+					50+ top arrangers
+				</div>
+				<div class="cityInfo">
+					<ion-icon name="logo-twitter"></ion-icon>
+					<a href="#">@tietheknot-design_ban</a>
+				</div>
+			</div>
+			<div class="col span-1-of-4 box shadow-box">
+				<img src="../static/images/hyderabad.jpg" alt="Hyderabad.jpg" />
+				<div class="cityTitle">Hyderabad</div>
+				<div class="cityInfo">
+					<ion-icon name="person-outline"></ion-icon>
+
+					2300+ happy customers
+				</div>
+				<div class="cityInfo">
+					<ion-icon name="restaurant-outline"></ion-icon>
+					110+ top arrangers
+				</div>
+				<div class="cityInfo">
+					<ion-icon name="logo-twitter"></ion-icon>
+					<a href="#">@tietheknot-design_hyd</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="sign-up-section" id="wp-4">
+		<div class="row">
+			<h2>Start your dream booking today</h2>
+		</div>
+		<div class="row">
+			<div class="col span-1-of-3">
+				<div class="plan-box jquery-wp-4 animate__bounceIn">
+					<div>
+						<h3>Premium</h3>
+
+						<p class="plan-price">₹20000<span>/ month</span></p>
+						<p class="plan-price-meal">
+							That's only ₹666.66 per day
+						</p>
+					</div>
+					<div>
+						<ul>
+							<li>
+								<ion-icon name="checkmark-outline" size="small"></ion-icon>Per hour cleaning!
+							</li>
+							<li>
+								<ion-icon name="checkmark-outline" size="small"></ion-icon>Good food
+							</li>
+							<li>
+								<ion-icon name="checkmark-outline" size="small"></ion-icon>Access to newest creations
+							</li>
+							<li>
+								<ion-icon name="checkmark-outline" size="small"></ion-icon>
+								No booking charges!
+							</li>
+						</ul>
+					</div>
+					<div>
+						<a href="/register" class="btn btn-hungry">Sign up now</a>
+					</div>
+				</div>
+			</div>
+			<div class="col span-1-of-3">
+				<div class="plan-box jquery-wp-4 animate__bounceIn">
+					<div>
+						<h3>Pro</h3>
+						<p class="plan-price">₹15,000 <span>/ Month</span></p>
+						<p class="plan-price-meal">
+							That's only ₹500 per day
+						</p>
+					</div>
+					<div>
+						<ul>
+							<li>
+								<ion-icon name="checkmark-outline" size="small"></ion-icon>Per hour cleaning!
+							</li>
+							<li>
+								<ion-icon name="checkmark-outline" size="small"></ion-icon>Best food
+							</li>
+							<li>
+								<ion-icon name="checkmark-outline" size="small"></ion-icon>Access to newest creations
+							</li>
+							<li>
+								<ion-icon name="checkmark-outline" size="small"></ion-icon>
+								No booking charges!
+							</li>
+						</ul>
+					</div>
+					<div>
+						<a href="/register" class="btn btn-hungry">Sign up now</a>
+					</div>
+				</div>
+			</div>
+			<div class="col span-1-of-3">
+				<div class="plan-box jquery-wp-4 animate__bounceIn">
+					<div>
+						<h3>Starter</h3>
+						<p class="plan-price">
+							₹10000 per <span>/ Month</span>
+						</p>
+						<p class="plan-price-meal">&nbsp;</p>
+					</div>
+					<div>
+						<ul>
+							<li>
+								<ion-icon name="checkmark-outline" size="small"></ion-icon>Per hour cleaning!
+							</li>
+							<li>
+								<ion-icon name="checkmark-outline" size="small"></ion-icon>No food!
+							</li>
+							<li>
+								<ion-icon name="close-outline" size="small"></ion-icon>
+							</li>
+							<li>
+								<ion-icon name="checkmark-outline" size="small"></ion-icon>
+								No booking charges!
+							</li>
+						</ul>
+					</div>
+					<div>
+						<a href="/register" class="btn btn-hungry">Sign up now</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<div class="row">
+			<div class="col span-2-of-3">
+				<ul class="footer-nav">
+					<li><a href="#">About us</a></li>
+					<li><a href="#">Blog</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</div>
+			<div class="col span-1-of-3">
+				<ul class="footer-icons">
+					<li>
+						<a href="#"><i class="fab fa-facebook-square"></i></a>
+					</li>
+					<li>
+						<a href="#"><i class="fab fa-instagram"></i></a>
+					</li>
+					<li>
+						<a href="#"><i class="far fa-envelope"></i></a>
+					</li>
+					<li>
+						<a href="#"><i class="fab fa-twitter"></i></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div>
+			<p class="copyRight">
+				Copyright &copy; 2021 by TieTheKnot. All rights reserved.
+			</p>
+		</div>
+	</footer>
+	<script>
+		let i = 0;
+		let txt =
+			'Get a good hall for your memorable marriage!'; /* The text */
+		let fSpeed = 100; /* The speed/duration of the effect in milliseconds */
+		let rSpeed = 50; /* The speed/duration of the effect in milliseconds */
+		typeWriterForward();
+
+		function typeWriterForward() {
+			if (i != txt.length - 1) {
+				document.getElementById('changeContent').innerHTML +=
+					txt.charAt(i);
+				i++;
+				setTimeout(typeWriterForward, fSpeed);
+			} else {
+				i = txt.length;
+				typeWriterReverse();
+			}
+		}
+
+		function typeWriterReverse() {
+			if (i > -1) {
+				document.getElementById('changeContent').innerHTML =
+					document
+						.getElementById('changeContent')
+						.innerHTML.slice(0, i);
+				i--;
+				setTimeout(typeWriterReverse, rSpeed);
+			} else {
+				typeWriterForward();
+			}
+		}
+	</script>
+</body>
+
+</html>
