@@ -10,7 +10,6 @@ main = Blueprint('main',__name__)
 @authenticate
 def home():
     try:
-        print('g.user',g.user)
         if(g.user):
             return render_template('home.html',user=g.user)
     except Exception as e:
@@ -49,7 +48,6 @@ def main_register():
 @authenticate
 def logout():
     if(g.user):
-        print('Discarding cookie')
         g.user = None
         res = make_response(redirect(url_for('.home')))
         res.delete_cookie('userId')
@@ -71,10 +69,6 @@ def login():
             return redirect('/login')
 
         flash('Login Sucessful.')
-
-        print("user.get('id')",type(user.get('id')))
-        print("id",user.get('id'))
-
         res = make_response(redirect(url_for('.home',user= json.dumps(user))))
         res.set_cookie('userID',str(user.get('id')),max_age=60*30)
 
@@ -91,6 +85,24 @@ def halls():
         return render_template('halls.html',halls=halls)
     return redirect('/login')
 
+@main.route('/halls/book/<int:id>')
+@authenticate
+def book_hall(id):
+    if(g.user):
+        return render_template('book.html')
+    return redirect('/login')
+
+@main.route('/halls/about/<int:id>')
+@authenticate
+def about_hall(id):
+    if(g.user):
+        hall = db.get_hall(id)
+        if(hall):
+            return render_template('about.html',hall=hall[0])
+        flash('No hall found!')
+        redirect('/halls')
+    return redirect('/login')
+
 @main.route('/dashboard')
 @authenticate
 def dashboard():
@@ -105,7 +117,6 @@ def dashboard():
 def update_user(id):
     if request.method == 'POST':
         try:
-            print('REQUEST',request.form)
             name = request.form['name']
             email = request.form['email']
             password = request.form['password']
@@ -116,7 +127,6 @@ def update_user(id):
             except Exception as e:
                 print(e)
 
-            print(name,email,password,phone,id)
             db.update_user(name,email,password,phone,id)
             flash('Profile updated sucessfully.')
         except Exception as e:
@@ -134,4 +144,8 @@ def delete_user(id):
         except Exception as e:
             flash('Unable to delete profile!')
             print(e)
-    return redirect('/')
+    g.user = None
+    res = make_response(redirect(url_for('.home')))
+    res.delete_cookie('userId')
+    res.set_cookie('userID', '', expires=0)
+    return res

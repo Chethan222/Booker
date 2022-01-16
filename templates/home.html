@@ -882,21 +882,27 @@
 					<li><a href="/register">Register</a></li>
 					{% endif %}
 					<li><a href="/halls">Book Hall Now</a></li>
-					<li><a href="#cities">About</a></li>
+					<li><a href="#about">About</a></li>
 				</ul>
 				<a class="mobileNavIcon jqueryMblNav"><i class="fas fa-bars"></i></a>
 			</div>
 		</nav>
 		<div class="hero-text-box">
 			<h1>
-				Hello There,<br>
+				Hello {% if user %}
+					{% if user.name %}
+					{{user.name}}
+					{% endif %}
+					{% else %}
+				There
+			{% endif %},<br>
 				<span id="changeContent"></span><span class="blinkCursor">&nbsp;|</span>
 			</h1>
-			<a href="#" class="btn btn-hungry scroll-to-plans">I'm excited</a>
-			<a href="#" class="btn btn-show-more scroll-to-start">Show me more</a>
+			<a href="/halls" class="btn btn-hungry scroll-to-plans">I'm excited</a>
+			<a href="#wp-4" class="btn btn-show-more scroll-to-start">Show me more</a>
 		</div>
 	</header>
-	<section class="section-feature" id="food">
+	<section class="section-feature" id="about">
 		<div class="row">
 			<h2>We build your dream into reality.</h2>
 			<p class="aboutContent">

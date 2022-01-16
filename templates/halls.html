@@ -7,8 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400&display=swap" rel="stylesheet" />
 
     <style>
-        
-
         *,
         *::after,
         *::before {
@@ -20,25 +18,25 @@
             font-size: 62.5%;
         }
 
-       
+
         body {
             -webkit-box-sizing: border-box;
             box-sizing: border-box;
-            font-family: 'Lato', sans-serif;
+            font-family: "Lato", sans-serif;
             font-size: 1.6rem;
             line-height: 1.7;
             font-weight: 300;
             color: #777;
             padding: 3rem;
-    background-attachment: fixed;
-    background-image: -o-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(//static/images/25.jpg);
-    background-image: -webkit-gradient( linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(/static/images/25.jpg);
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/static/images/25.jpg);
-    height: 100vh;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-overflow: auto;
+            background-attachment: fixed;
+            background-image: -o-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(//static/images/25.jpg);
+            background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(/static/images/25.jpg);
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/static/images/25.jpg);
+            height: 100vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            overflow: auto;
         }
 
 
@@ -48,6 +46,7 @@ overflow: auto;
             margin-top: 1rem;
             padding-bottom: 15rem;
         }
+
         .heading {
             color: #fff;
             text-transform: uppercase;
@@ -118,20 +117,21 @@ overflow: auto;
             margin: 0 2rem !important;
         }
 
-/************** Hall-Container********************/
-.hall__Container{
-    /* display: flex;
+        /************** Hall-Container********************/
+        .hall__Container {
+            /* display: flex;
     flex-direction: row;
     flex-shrink: 0;
     gap: 3rem;
     justify-content: space-evenly;
     flex-wrap: wrap; */
-    display: grid;
-    /* column-gap: 3rem; */
-    grid-template-columns: 1fr 1fr 1fr;
-   justify-items: center;
-    row-gap: 5rem;
-}
+            display: grid;
+            /* column-gap: 3rem; */
+            grid-template-columns: 1fr 1fr 1fr;
+            justify-items: center;
+            row-gap: 5rem;
+        }
+
         /******************* CARD **************************/
         .card {
             width: 30rem;
@@ -143,9 +143,11 @@ overflow: auto;
             /* overflow: hidden; */
             border-radius: 0.3rem;
         }
-.dummy{
-    height: 40rem;
-}
+
+        .dummy {
+            height: 40rem;
+        }
+
         .card__side {
             width: 100%;
             height: 40rem;
@@ -264,21 +266,22 @@ overflow: auto;
         .card__details {
             padding: 2rem 0 3rem 0;
         }
-        .details{
+
+        .details {
             text-overflow: ellipsis !important;
         }
 
         .card__details p {
             width: 80%;
             margin: 0 auto;
-             text-align: center;
+            text-align: center;
             font-size: 1.5rem;
             padding: 1rem;
             border-bottom: 0.1rem solid #eee;
             text-overflow: ellipsis;
         }
 
-       
+
 
         .card__price {
             text-align: center;
@@ -376,16 +379,27 @@ overflow: auto;
         .btn__Header:after {
             background-color: #fff;
         }
-.btn__About{
-    display: block;
-    padding: .5rem 2rem;
-    margin-top: 2rem;
-    border-radius: 2rem;
-    color: #ffffff !important;
-}
-.btn__About__1{ border: 3px solid #ffb900 !important;}
-.btn__About__2{ border: 3px solid #7ed56f !important;}
-.btn__About__3{ border: 3px solid #2998ff !important;}
+
+        .btn__About {
+            display: block;
+            padding: .5rem 2rem;
+            margin-top: 2rem;
+            border-radius: 2rem;
+            color: #ffffff !important;
+        }
+
+        .btn__About__1 {
+            border: 3px solid #ffb900 !important;
+        }
+
+        .btn__About__2 {
+            border: 3px solid #7ed56f !important;
+        }
+
+        .btn__About__3 {
+            border: 3px solid #2998ff !important;
+        }
+
         .btn__Special {
             border-radius: 10rem;
             text-transform: uppercase;
@@ -422,13 +436,80 @@ overflow: auto;
             background-color: #55c57a;
             color: #ffffff;
         }
+
+        .snackbar {
+            display: none;
+            visibility: hidden;
+            text-align: center;
+            max-width: 300px;
+            padding: 10px 20px;
+            color: indianred;
+            background-color: rgb(241, 202, 202);
+            border: 1px solid indianred;
+            border-radius: 10px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, 0);
+            transition: all 1s;
+            animation: moveDown 1s;
+        }
+
+        @keyframes moveDown {
+            0% {
+                transform: translate(-50%, -20px);
+            }
+
+            100% {
+                transform: translate(-50%, 0);
+            }
+        }
+
+        .snackbar.show {
+            visibility: visible;
+            display: block;
+            color: rgb(221, 92, 92);
+        }
+
+        @keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 0.5;
+            }
+        }
+
+        @keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 0.5;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hall</title>
 </head>
 
 <body>
-
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <div class="snackbar">{{ messages[0] }}</div>
+    <script>
+        const snackBar = document.querySelector('.snackbar');
+        snackBar.classList.add('show');
+        setTimeout(function () {
+            snackBar.classList.remove('show');
+        }, 3000);
+    </script>
+    {% endif %} {% endwith %}
     <section class="sectionTours">
         <div><a href="/" class="btn  btn__About btn__Animated__Scale btn__About__1">Go Back</a></div>
         <h2 class="heading__Secondary umargin__Bottom__Big">
@@ -437,29 +518,29 @@ overflow: auto;
         <div class="hall__Container">
             {% set count = namespace(value=1) %}
 
-    
-        {% for  hall in  halls %}
-                <div class="card" id="hall{{hall.id}}">
-                    <div class="dummy"></div>
-                    <div class="card__side card__side__front">
-                        <div class="card__picture">
-                            &nbsp;
-                        </div>
-                        <h4 class="card__heading">
-                            <span class="card__heading__span card__heading__span__{% if count.value == 1 %}orange
+
+            {% for hall in halls %}
+            <div class="card" id="hall{{hall.id}}">
+                <div class="dummy"></div>
+                <div class="card__side card__side__front">
+                    <div class="card__picture">
+                        &nbsp;
+                    </div>
+                    <h4 class="card__heading">
+                        <span class="card__heading__span card__heading__span__{% if count.value == 1 %}orange
                                             {% elif count.value == 2 %}green
                                             {% else %}blue
                                             {% endif %}}
 										">{{hall.name}}</span>
-                        </h4>
-                        <div class="card__details">
-                            <p class="details">
-                               {{hall.description}}
-                                
-                            </p>
-                        </div>
+                    </h4>
+                    <div class="card__details">
+                        <p class="details">
+                            {{hall.description}}
+
+                        </p>
                     </div>
-                    <div class="
+                </div>
+                <div class="
 									card__side
 									card__side__back
 									card__side__back__{% if count.value == 1 %}orange
@@ -467,39 +548,38 @@ overflow: auto;
                                             {% else %}blue
                                             {% endif %}}
 								">
-                        <div class="card__price">
-                            <div class="card__priceBox">
-                                <p class="card__pricBox__desc">Only</p>
-                                <p class="card__priceBox__value">
-                                    &#8377;{{hall.price}}
-                                </p>
-                            </div>
-                            <a href="/halls/book/{{hall.id}}" class="
+                    <div class="card__price">
+                        <div class="card__priceBox">
+                            <p class="card__pricBox__desc">Only</p>
+                            <p class="card__priceBox__value">
+                                &#8377;{{hall.price}}
+                            </p>
+                        </div>
+                        <a href="/halls/book/{{hall.id}}" class="
 											btn btn__Header btn__Animated__Scale
 											card__price__btn{% if count.value == 1 %}1
                                             {% elif count.value == 2 %}2
                                             {% else %}3
                                             {% endif %}}
 										">Book now!</a>
-                            <a href="/halls/about/{{hall.id}}" class="
+                        <a href="/halls/about/{{hall.id}}" class="
 											btn  btn__About btn__Animated__Scale
 											btn__About__{% if count.value == 1 %}1
                                             {% elif count.value == 2 %}2
                                             {% else %}3
                                             {% endif %}}
 										">About</a>
-                        </div>
                     </div>
                 </div>
-                <script>
-    let div{{hall.id}} = document.querySelector('#hall{{hall.id}} .card__picture');
-    div{{hall.id}}.style.backgroundImage = "url('static/images/{{hall.image}}')";
-</script>
-{% if count.value == 3 %}
-{% set count.value = 0 %}
-{% endif %}
-{% set count.value = count.value + 1 %}
-{% endfor %}
+            </div>
+            <script>
+                document.querySelector('#hall{{hall.id}} .card__picture').style.backgroundImage = "url('static/images/{{hall.image}}')";
+            </script>
+            {% if count.value == 3 %}
+            {% set count.value = 0 %}
+            {% endif %}
+            {% set count.value = count.value + 1 %}
+            {% endfor %}
         </div>
     </section>
 </body>

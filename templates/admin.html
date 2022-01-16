@@ -210,22 +210,41 @@
 
 
 
-		#snackBar {
-			color: #ffffff;
+	
+		.snackbar {
+			display: none;
+			visibility: hidden;
 			text-align: center;
-			padding: 5px;
+			max-width: 300px;
+			padding: 10px 20px;
+			color: indianred;
+			background-color: rgb(241, 202, 202);
+			border: 1px solid indianred;
+			border-radius: 10px;
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: translate(-50%, 0);
+			transition: all 1s;
+			animation: moveDown 1s;
+			font-size: 1.6rem !important;
 		}
 
-		.show {
-			color: #ff8080 !important;
+		@keyframes moveDown {
+			0% {
+				transform: translate(-50%, -20px);
+			}
+
+			100% {
+				transform: translate(-50%, 0);
+			}
 		}
 
-		#snackbar.show {
-			color: #ff8080 !important;
-			display: block !important;
-			animation: fadein 0.5s, fadeout 0.5s 2.5s;
+		.snackbar.show {
+			visibility: visible;
+			display: block;
+			color: rgb(221, 92, 92);
 		}
-
 
 		@keyframes fadein {
 			from {
@@ -351,75 +370,93 @@
 		}
 
 		.btnPrimary:hover {
-				
+
 			background-color: orange;
 			color: white;
 		}
+
 		.btn,
-        .btn:link,
-        .btn:visited {
-            text-decoration: none;
-            -webkit-transition: all 0.2s;
-            -o-transition: all 0.2s;
-            transition: all 0.2s;
-            position: relative;
-            display: inline-block;
-            font-size: 1.4rem;
-        }
+		.btn:link,
+		.btn:visited {
+			text-decoration: none;
+			-webkit-transition: all 0.2s;
+			-o-transition: all 0.2s;
+			transition: all 0.2s;
+			position: relative;
+			display: inline-block;
+			font-size: 1.4rem;
+		}
 
-        .btn:hover {
-            -webkit-transform: translateY(-0.3rem);
-            -ms-transform: translateY(-0.3rem);
-            transform: translateY(-0.3rem);
-            -webkit-box-shadow: 0.5rem 0.8rem 1rem rgba(0, 0, 0, 0.2);
-            box-shadow: 0.5rem 0.8rem 1rem rgba(0, 0, 0, 0.2);
-        }
+		.btn:hover {
+			-webkit-transform: translateY(-0.3rem);
+			-ms-transform: translateY(-0.3rem);
+			transform: translateY(-0.3rem);
+			-webkit-box-shadow: 0.5rem 0.8rem 1rem rgba(0, 0, 0, 0.2);
+			box-shadow: 0.5rem 0.8rem 1rem rgba(0, 0, 0, 0.2);
+		}
 
-        .btn:active,
-        .btn:focus {
-            -webkit-transform: translateY(-1px);
-            -ms-transform: translateY(-1px);
-            transform: translateY(-1px);
-            -webkit-box-shadow: 0.5rem 0.8rem 1rem rgba(0, 0, 0, 0.2);
-            box-shadow: 0.5rem 0.8rem 1rem rgba(0, 0, 0, 0.2);
-        }
+		.btn:active,
+		.btn:focus {
+			-webkit-transform: translateY(-1px);
+			-ms-transform: translateY(-1px);
+			transform: translateY(-1px);
+			-webkit-box-shadow: 0.5rem 0.8rem 1rem rgba(0, 0, 0, 0.2);
+			box-shadow: 0.5rem 0.8rem 1rem rgba(0, 0, 0, 0.2);
+		}
 
-        .btn:after {
-            content: '';
-            display: inline-block;
-            height: 100%;
-            width: 100%;
-            border-radius: 10rem;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            -webkit-transition: all 1s;
-            -o-transition: all 1s;
-            transition: all 1s;
-        }
-.btn__About{
-    display: block;
-    padding: .5rem 2rem;
-    margin-top: 1rem;
-    border-radius: 2rem;
-    color: #ffb900 !important;
-    font-size: 1.4rem !important;
-}
-.btn__About__1{ border: 3px solid #ffb900 !important;
-	margin-bottom: 1rem;
-}
-.btn-primary{
-	font-size: 1rem;
-}
-.btn-secondary{
-	font-size: 1rem;
-}
-.config__container{
-	padding: 1.5rem 0;
-}
-h5{margin-bottom: .5rem !important;}
-h4{margin-bottom: 1rem !important;}
+		.btn:after {
+			content: '';
+			display: inline-block;
+			height: 100%;
+			width: 100%;
+			border-radius: 10rem;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+			-webkit-transition: all 1s;
+			-o-transition: all 1s;
+			transition: all 1s;
+		}
+
+		.btn__About {
+			display: block;
+			padding: .5rem 2rem;
+			margin-top: 1rem;
+			border-radius: 2rem;
+			color: #ffb900 !important;
+			font-size: 1.4rem !important;
+		}
+
+		.btn__About__1 {
+			border: 3px solid #ffb900 !important;
+			margin-bottom: 1rem;
+		}
+
+		.btn-primary {
+			font-size: 1rem;
+		}
+
+		.btn-secondary {
+			font-size: 1rem;
+		}
+
+		.config__container {
+			padding: 1.5rem 0;
+		}
+
+		h5 {
+			margin-bottom: .5rem !important;
+		}
+
+		h4 {
+			margin-bottom: 1rem !important;
+		}
+		.cPanel{
+			color: #ffffff !important;
+			text-transform: uppercase;
+			font-style: bold;
+		}
 	</style>
 	<title>Admin</title>
 </head>
@@ -464,36 +501,35 @@ h4{margin-bottom: 1rem !important;}
 		</div>
 	</div>
 	<div class="container">
-		<div id="backDrop"></div>{% with messages = get_flashed_messages() %}
-		<script>
-
-			{% if messages %}
-
-			{% for message in messages %}
-			<p>{{ message }}</p>
-			{% endfor %}
-
-			{% endif %}
-
-		</script>
-		{% endwith %}
+		<div id="backDrop"></div>
+		{% with messages = get_flashed_messages() %} {% if messages %}
+	<div class="snackbar">{{ messages[0] }}</div>
+	<script>
+		const snackBar = document.querySelector('.snackbar');
+		snackBar.classList.add('show');
+		setTimeout(function () {
+			snackBar.classList.remove('show');
+		}, 3000);
+	</script>
+	{% endif %} {% endwith %}
 
 		<header class="admin__header">
 
-			<h1>Control Panel</h1>
+			<h1 class="cPanel">Control Panel</h1>
 			<div style="display: inline-block;">
 				<a href="#" class="btn btnPrimary" id="addHallBtn">Add Hall</a>
-			<a href="/admin/logout" class="btn btnPrimary">Logout</a></div>
-			
+				<a href="/admin/logout" class="btn btnPrimary">Logout</a>
+			</div>
+
 
 		</header>
 
-<div><a href="/" class="btn  btn__About  btn__About__1">Go Back</a></div>
+		<div><a href="/" class="btn  btn__About  btn__About__1">Go Back</a></div>
 		<section class="section__config">
 			<div class="section__config--header">
 				<a href="#" class="config__Link" id='getHallBtn'>Halls</a><span class="config__separator">|</span>
 				<a href="#" class="config__Link" id='getUserBtn'>Users</a>
-				
+
 				<div class="config__err">
 					<p></p>
 				</div>
@@ -583,7 +619,7 @@ h4{margin-bottom: 1rem !important;}
 							<h3 class="card-title">${user.name}</h3>
 							<p class="card-text">${user.email}</p>
 							<div>
-								<h4 class="card-text">₹${user.phone}</h4>
+								<h4 class="card-text">${user.phone}</h4>
 							</div>
 							<a class="btn btn-secondary delete">Delete</a>
 					</div>`;
@@ -684,21 +720,21 @@ h4{margin-bottom: 1rem !important;}
 		const price = inputs[3].value;
 		let photo = inputs[2].files[0];
 
-		if (!name){
+		if (!name) {
 			return displaySnackBar('Please enter name!');
-		} 
-		if (!place){
+		}
+		if (!place) {
 			return displaySnackBar('Please enter place!');
-		} 
-		if (!description){
+		}
+		if (!description) {
 			return displaySnackBar('Please enter description!');
-		} 
-		if (!file){
+		}
+		if (!file) {
 			return displaySnackBar('Please Upload a file!');
-		} 
-		if (!price){
+		}
+		if (!price) {
 			return displaySnackBar('Please enter price!');
-		} 
+		}
 
 		if (name.length < 5) {
 			return displaySnackBar('Enter a valid name!');
@@ -712,7 +748,7 @@ h4{margin-bottom: 1rem !important;}
 			return displaySnackBar('Description should atleast be of 50 letters length!');
 		}
 		hallform.submit();
-		
+
 
 	};
 

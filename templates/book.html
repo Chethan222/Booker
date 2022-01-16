@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+		href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400&display=swap"
+		rel="stylesheet" />
+    <style>
+        body {
+            background-attachment: fixed;
+            background-image: -o-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/static/images/25.jpg);
+            background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(/static/images/25.jpg);
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/static/images/25.jpg);
+            height: 100vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: "Lato", "Arial", sans-serif;
+        }
+
+             /*********************************** Buttons ***********************************/
+        .btn,
+        .btn:link,
+        .btn:visited {
+            text-decoration: none;
+            -webkit-transition: all 0.2s;
+            -o-transition: all 0.2s;
+            transition: all 0.2s;
+            position: relative;
+            display: inline-block;
+            font-size: 1.2rem;
+        }
+
+        .btn:hover {
+            -webkit-transform: translateY(-0.3rem);
+            -ms-transform: translateY(-0.3rem);
+            transform: translateY(-0.3rem);
+            -webkit-box-shadow: 0.5rem 0.8rem 1rem rgba(0, 0, 0, 0.2);
+            box-shadow: 0.5rem 0.8rem 1rem rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:active,
+        .btn:focus {
+            -webkit-transform: translateY(-1px);
+            -ms-transform: translateY(-1px);
+            transform: translateY(-1px);
+            -webkit-box-shadow: 0.5rem 0.8rem 1rem rgba(0, 0, 0, 0.2);
+            box-shadow: 0.5rem 0.8rem 1rem rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:after {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            width: 100%;
+            border-radius: 10rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            -webkit-transition: all 1s;
+            -o-transition: all 1s;
+            transition: all 1s;
+        }
+
+        .btn__About{
+    display: block;
+    padding: .5rem 2rem;
+    margin-top: 2rem;
+    border-radius: 2rem;
+    color: #ffffff !important;
+}
+   .btn__Animated__Scale:hover::after {
+            -webkit-transform: scaleX(1.4) scaleY(1.6);
+            -ms-transform: scaleX(1.4) scaleY(1.6);
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+
+        .btn__About__2{ border: 3px solid #7ed56f !important;}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 0;
+    flex-direction: column;
+}
+.heading {
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 400;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+ .heading__Secondary {
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            text-align: center;
+            background-image: -webkit-gradient(linear, left top, right top, from(#55c57a), to(#28b485));
+            background-image: -o-linear-gradient(left, #55c57a, #28b485);
+            background-image: linear-gradient(to right, #55c57a, #28b485);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 0.2rem;
+            -webkit-transition: all 1s;
+            -o-transition: all 1s;
+            transition: all 1s;
+            margin-bottom: 0 !important;
+        }
+
+        .heading__Secondary:hover {
+            -webkit-transform: skewY(2deg) skewX(15deg) scale(1.05);
+            -ms-transform: skewY(2deg) skewX(15deg) scale(1.05);
+            transform: skewY(2deg) skewX(15deg) scale(1.05);
+            text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
+        }
+        .subTitle{
+            font-size: 1.2rem;
+            text-align: center;
+            color: #ffffff;
+        }
+
+    </style>
+    <title>Book Hall</title>
+
+</head>
+<body>
+     <div><a href="/halls" class="btn  btn__About btn__Animated__Scale btn__About__2">Go to Back</a></div>
+    
+    <div class="container"> <h2 class="heading__Secondary">Your hall has been booked!</h2>
+        <p class="subTitle">We will call you shortly.</p>
+    </div>
+</body>
+</html>

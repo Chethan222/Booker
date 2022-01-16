@@ -17,7 +17,7 @@ def admin_login():
         if(email == ADMIN.get('email')):
             if(password == ADMIN.get('password')):
                 res = make_response(redirect(url_for('.admin_home')))
-                res.set_cookie('adminID',str(ADMIN.get('id')),max_age=60)
+                res.set_cookie('adminID',str(ADMIN.get('id')),max_age=60*10)
                 return res
         else:
             flash('Invalid Credentials!')
@@ -26,7 +26,6 @@ def admin_login():
 @admin.route('/admin/logout')
 @authenticateAdmin
 def admin_logout():
-    print('Discarding cookie')
     g.admin = None
     res = make_response(redirect(url_for('.admin_home')))
     res.delete_cookie('adminID')
@@ -57,9 +56,11 @@ def admin_add():
             if(not res):
                 flash('Unable to create hall data!')
                 return redirect('/admin')   
- 
+            flash('New hall data created sucessfully!')
+            return redirect('/admin') 
         except Exception as e:
             print("ERROR",e)
+            flash('Unable to create hall data!')
         return redirect('/admin')
 
 
@@ -113,6 +114,7 @@ def admin_update(id):
 
             res = db.update_hall(id,name,place,description,price,secure_filename(hallImage.filename))
             if(res):
+                flash('Hall Updated sucessfully!')
                 return redirect('/admin')
             flash('Something went wrong! Unable to update data!')
             return redirect('/admin')
@@ -126,12 +128,18 @@ def admin_update(id):
 @authenticateAdmin
 def admin_delete_hall(id):
     res = db.delete_hall(id)
-    print("RES",res)
+    if(res):
+        flash('Hall data deleted sucessfully!')
+    else:
+        flash('Unable to delete hall data!')
     return redirect('/admin')
 
 @admin.route('/admin/user/delete/<int:id>',methods=['GET',])
 @authenticateAdmin
 def admin_delete_user(id):
     res = db.delete_user(id)
-    print("RES",res)
+    if(res):
+        flash('User removed sucessfully!')
+    else:
+        flash('Unable to remove user!')
     return redirect('/admin')
