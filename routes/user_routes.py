@@ -82,14 +82,21 @@ def login():
 def halls():
     if(g.user):
         halls = db.get_halls()
+        print(halls)
         return render_template('halls.html',halls=halls)
     return redirect('/login')
 
-@main.route('/halls/book/<int:id>')
+@main.route('/halls/book/<int:hall_id>')
 @authenticate
-def book_hall(id):
+def book_hall(hall_id):
     if(g.user):
-        return render_template('book.html')
+        user_id = g.user.get('id')
+        res = db.book_hall(user_id,hall_id)
+        if(res):
+            book_id = db.get_booking(user_id,hall_id)[0][0]
+            return render_template('book.html',book_id=book_id)
+        flash("Something went wrong! Couldn't book hall.")
+        return redirect('/halls')
     return redirect('/login')
 
 @main.route('/halls/about/<int:id>')

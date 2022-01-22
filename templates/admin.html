@@ -210,7 +210,7 @@
 
 
 
-	
+
 		.snackbar {
 			display: none;
 			visibility: hidden;
@@ -452,10 +452,48 @@
 		h4 {
 			margin-bottom: 1rem !important;
 		}
-		.cPanel{
+
+		.cPanel {
 			color: #ffffff !important;
 			text-transform: uppercase;
 			font-style: bold;
+		}
+
+		table {
+			width: 700px;
+			margin: 30px auto;
+			/* border: 1px solid rgb(20, 20, 20); */
+			border-radius: 5px;
+			/* border-collapse: collapse; */
+			font-size: 1.6rem;
+			grid-column: 1 / -1;
+			box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+			margin-bottom: 50px;
+			text-align: center;
+		}
+
+		td,
+		th {
+			color: #111111;
+			width: 25%;
+			text-align: left;
+			padding: 16px 24px;
+			text-align: center;
+		}
+		td,th {
+    border-right: 2px solid rgb(131, 129, 129,.6)
+}
+
+		thead th {
+			background-color: #b8b9b8;
+		}
+
+		tbody tr:nth-child(even) {
+			background-color: #f8f9fa;
+		}
+
+		tbody tr:nth-child(odd) {
+			background-color: #e9ecef;
 		}
 	</style>
 	<title>Admin</title>
@@ -503,15 +541,15 @@
 	<div class="container">
 		<div id="backDrop"></div>
 		{% with messages = get_flashed_messages() %} {% if messages %}
-	<div class="snackbar">{{ messages[0] }}</div>
-	<script>
-		const snackBar = document.querySelector('.snackbar');
-		snackBar.classList.add('show');
-		setTimeout(function () {
-			snackBar.classList.remove('show');
-		}, 3000);
-	</script>
-	{% endif %} {% endwith %}
+		<div class="snackbar">{{ messages[0] }}</div>
+		<script>
+			const snackBar = document.querySelector('.snackbar');
+			snackBar.classList.add('show');
+			setTimeout(function () {
+				snackBar.classList.remove('show');
+			}, 3000);
+		</script>
+		{% endif %} {% endwith %}
 
 		<header class="admin__header">
 
@@ -528,7 +566,8 @@
 		<section class="section__config">
 			<div class="section__config--header">
 				<a href="#" class="config__Link" id='getHallBtn'>Halls</a><span class="config__separator">|</span>
-				<a href="#" class="config__Link" id='getUserBtn'>Users</a>
+				<a href="#" class="config__Link" id='getUserBtn'>Users</a><span class="config__separator">|</span>
+				<a href="#" class="config__Link" id='getBookingBtn'>Bookings</a>
 
 				<div class="config__err">
 					<p></p>
@@ -556,6 +595,7 @@
 	const deleteButton = deleteHallModal.querySelector('.btnSuccess');
 	const getHallBtn = document.getElementById('getHallBtn');
 	const getUserBtn = document.getElementById('getUserBtn');
+	const getBookingBtn = document.getElementById('getBookingBtn');
 	const configContainer = document.querySelector('.config__container');
 	const errorShow = document.querySelector('.config__err p');
 
@@ -593,6 +633,39 @@
 
 					div.querySelector('a.update').addEventListener('click', openAddHallModalForUpdate.bind(null, hall));
 					div.querySelector('a.delete').addEventListener('click', deleteHallHandler.bind(null, hall.id));
+				});
+			})
+			.catch((error) => {
+				console.error('Error:', error);
+			});
+	}
+	const getBookings = () => {
+		clearConfigContainer();
+		fetch('/admin/bookings').then(response => response.json())
+			.then(bookings => {
+				if (bookings.length == 0) {
+					return errorShow.innerHTML = 'No bookings found!';
+				}
+				errorShow.innerHTML = '';
+				const table = document.createElement('table');
+				table.innerHTML = `<thead>
+										<tr>
+											<th>Booking Id</th>
+											<th>User Id</th>
+											<th>Hall Id</th>
+										</tr>
+										<tbody id='tableBody'>
+										</tbody>
+									</thead>`;
+				configContainer.append(table);
+				tbody = document.getElementById('tableBody');
+				bookings.forEach(booking => {
+					const tr = document.createElement('tr');
+					tr.id = booking.id;
+					tr.innerHTML = `<td>${booking.id}</td>
+									<td>${booking.user}</td>
+									<td>${booking.hall}</td>`;
+					tbody.append(tr);
 				});
 			})
 			.catch((error) => {
@@ -772,6 +845,7 @@
 	//Adding event listeners to get hall and get user buttons
 	getHallBtn.addEventListener('click', getHalls);
 	getUserBtn.addEventListener('click', getUsers);
+	getBookingBtn.addEventListener('click', getBookings);
 
 </script>
 

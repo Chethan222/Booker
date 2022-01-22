@@ -18,11 +18,14 @@ app.register_blueprint(admin)
 
 db.init_app(app)
 
-
-#Database creation for the first time
-# with app.app_context():
-#   dbUtilts.create_hall_table()
-#   dbUtilts.create_user_table()
+created = 0
+# Database creation for the first time
+# if not created :
+#     with app.app_context():
+#         created = 1
+#         dbUtilts.create_hall_table()
+#         dbUtilts.create_user_table()
+#         dbUtilts.create_booking_table()
 
 if __name__ == '__main__':
     app.debug=True

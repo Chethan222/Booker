@@ -111,6 +111,12 @@
             transition: all 1s;
             margin-bottom: 0 !important;
         }
+ .bookingId {
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-align: center;
+            color: #28b485;
+        }
 
         .heading__Secondary:hover {
             -webkit-transform: skewY(2deg) skewX(15deg) scale(1.05);
@@ -123,6 +129,11 @@
             text-align: center;
             color: #ffffff;
         }
+        .bookPara{
+            font-size: 1.8rem;
+            text-align: center;
+            color: #55c57a;
+        }
 
     </style>
     <title>Book Hall</title>
@@ -133,6 +144,9 @@
     
     <div class="container"> <h2 class="heading__Secondary">Your hall has been booked!</h2>
         <p class="subTitle">We will call you shortly.</p>
+        {% if book_id %}     
+        <p class="bookPara"> <span class="bookingId">Booking Id :</span> {{book_id}}</p>
+        {% endif %}
     </div>
 </body>
 </html>

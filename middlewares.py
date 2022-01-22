@@ -7,20 +7,19 @@ from admin_credentials import ADMIN
 
 def authenticate(func):
         @wraps(func)
-        def __home_decorator(*args, **kwargs):
+        def userAuth(*args, **kwargs):
             userId = request.cookies.get('userID')
             user = db.getUserById(userId)
-            print("USER",user)
             if(not userId or len(user)== 0):
                g.user = None
             g.user = user
             result = func(*args, **kwargs)
             return result
-        return __home_decorator
+        return userAuth
 
 def authenticateAdmin(func):
     @wraps(func)
-    def __home_decorator(*args, **kwargs):
+    def adminAuth(*args, **kwargs):
         userId = request.cookies.get('adminID')
         
         if(not userId):
@@ -31,4 +30,4 @@ def authenticateAdmin(func):
 
         result = func(*args, **kwargs)
         return result
-    return __home_decorator
+    return adminAuth

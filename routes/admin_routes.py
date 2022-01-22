@@ -68,21 +68,20 @@ def admin_add():
 @authenticateAdmin
 def admin_get_halls():
     halls = db.get_halls()
-    if(len(halls)==0):
-        return jsonify([])
+    return jsonify(halls)
 
-    halls_ = []
-
-    for hall in halls:
-        halls_.append({
-            'id':hall[0],
-            'name':hall[1],
-            'place':hall[2],
-            'description':hall[3],
-            'image':hall[4],
-            'price':hall[5]
+@admin.route('/admin/bookings')
+@authenticateAdmin
+def admin_get_bookings():
+    bookings_ = db.get_bookings()
+    bookings = []
+    for user in bookings_:
+        bookings.append({
+            'id':user[0],
+            'user':user[1],
+            'hall':user[2]
             })
-    return jsonify(halls_)
+    return jsonify(bookings)
 
 @admin.route('/admin/users')
 @authenticateAdmin
